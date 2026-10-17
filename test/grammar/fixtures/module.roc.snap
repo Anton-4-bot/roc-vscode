@@ -1,0 +1,20 @@
+> module [greet, Greeting, parse!]
+  "module" keyword.other.header.roc
+  "[" punctuation.section.brackets.begin.roc
+  "greet" variable.other.roc
+  "," punctuation.separator.comma.roc
+  "Greeting" entity.name.type.roc
+  "," punctuation.separator.comma.roc
+  "parse!" variable.other.roc
+  "]" punctuation.section.brackets.end.roc
+> 
+> package [Helper, ..] {}
+  "package" keyword.other.header.roc
+  "[" punctuation.section.brackets.begin.roc
+  "Helper" entity.name.type.roc
+  "," punctuation.separator.comma.roc
+  ".." keyword.operator.spread.roc
+  "]" punctuation.section.brackets.end.roc
+  "{" punctuation.section.braces.roc
+  "}" punctuation.section.braces.roc
+> 

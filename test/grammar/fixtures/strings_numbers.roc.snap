@@ -1,0 +1,163 @@
+> plain = "hello"
+  "plain" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "hello" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> escapes = "tab\t newline\n quote\" dollar\$ unicode\u(1F600)"
+  "escapes" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "tab" string.quoted.double.roc
+  "\\t" string.quoted.double.roc constant.character.escape.roc
+  " newline" string.quoted.double.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  " quote" string.quoted.double.roc
+  "\\\"" string.quoted.double.roc constant.character.escape.roc
+  " dollar" string.quoted.double.roc
+  "\\$" string.quoted.double.roc constant.character.escape.roc
+  " unicode" string.quoted.double.roc
+  "\\u(1F600)" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> nested = "outer ${inner("a ${b} c")} after ${ { x: 1 }.x }"
+  "nested" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "outer " string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "inner" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.call.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "\"" string.quoted.double.roc meta.interpolation.roc source.roc.embedded string.quoted.double.roc punctuation.definition.string.begin.roc
+  "a " string.quoted.double.roc meta.interpolation.roc source.roc.embedded string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc source.roc.embedded string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "b" string.quoted.double.roc meta.interpolation.roc source.roc.embedded string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "}" string.quoted.double.roc meta.interpolation.roc source.roc.embedded string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  " c" string.quoted.double.roc meta.interpolation.roc source.roc.embedded string.quoted.double.roc
+  "\"" string.quoted.double.roc meta.interpolation.roc source.roc.embedded string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  " after " string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  " " string.quoted.double.roc meta.interpolation.roc source.roc.embedded
+  "{" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.braces.roc
+  " " string.quoted.double.roc meta.interpolation.roc source.roc.embedded
+  "x" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.property.roc
+  ":" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.separator.key-value.roc
+  " " string.quoted.double.roc meta.interpolation.roc source.roc.embedded
+  "1" string.quoted.double.roc meta.interpolation.roc source.roc.embedded constant.numeric.roc
+  " " string.quoted.double.roc meta.interpolation.roc source.roc.embedded
+  "}" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.braces.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "x" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.property.roc
+  " " string.quoted.double.roc meta.interpolation.roc source.roc.embedded
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> multi =
+  "multi" variable.other.roc
+  "=" keyword.operator.assignment.roc
+> 	\\first ${name}
+  "\\\\" string.quoted.other.multiline.roc punctuation.definition.string.begin.roc
+  "first " string.quoted.other.multiline.roc
+  "${" string.quoted.other.multiline.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "name" string.quoted.other.multiline.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "}" string.quoted.other.multiline.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+> 	\\second "quoted"
+  "\\\\" string.quoted.other.multiline.roc punctuation.definition.string.begin.roc
+  "second \"quoted\"" string.quoted.other.multiline.roc
+> char = 'a'
+  "char" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "'" string.quoted.single.roc punctuation.definition.string.begin.roc
+  "a" string.quoted.single.roc
+  "'" string.quoted.single.roc punctuation.definition.string.end.roc
+> char_escape = '\n'
+  "char_escape" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "'" string.quoted.single.roc punctuation.definition.string.begin.roc
+  "\\n" string.quoted.single.roc constant.character.escape.roc
+  "'" string.quoted.single.roc punctuation.definition.string.end.roc
+> unterminated = "oops
+  "unterminated" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "oops" string.quoted.double.roc
+> after = 1
+  "after" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "1" constant.numeric.roc
+> ints = [0, 42, 1_000_000, 0xFF_FF, 0o17, 0b1010]
+  "ints" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "[" punctuation.section.brackets.roc
+  "0" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "42" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "1_000_000" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "0xFF_FF" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "0o17" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "0b1010" constant.numeric.roc
+  "]" punctuation.section.brackets.roc
+> floats = [1.5, 0.25e-3, 6.02e23]
+  "floats" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "[" punctuation.section.brackets.roc
+  "1.5" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "0.25e-3" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "6.02e23" constant.numeric.roc
+  "]" punctuation.section.brackets.roc
+> typed = [5.U8, -12.34.Dec, 0x10.U16, 7.MyNum, 3u8, 2dec]
+  "typed" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "[" punctuation.section.brackets.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "U8" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+  "-" keyword.operator.arithmetic.roc
+  "12.34" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "Dec" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+  "0x10" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "U16" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+  "7" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "MyNum" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+  "3" constant.numeric.roc
+  "u8" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+  "2" constant.numeric.roc
+  "dec" storage.type.numeric.roc
+  "]" punctuation.section.brackets.roc
+> tuple_index = pair.0 + pair.1
+  "tuple_index" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "pair" variable.other.roc
+  "." punctuation.accessor.roc
+  "0" variable.other.property.index.roc
+  "+" keyword.operator.arithmetic.roc
+  "pair" variable.other.roc
+  "." punctuation.accessor.roc
+  "1" variable.other.property.index.roc
+> range = 0..<10
+  "range" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "0" constant.numeric.roc
+  "..<" keyword.operator.range.roc
+  "10" constant.numeric.roc
+> inclusive = 1..=5
+  "inclusive" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "1" constant.numeric.roc
+  "..=" keyword.operator.range.roc
+  "5" constant.numeric.roc
+> 

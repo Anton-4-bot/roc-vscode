@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # ratchet:actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # ratchet:actions/setup-node@v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run check
+
+      - name: Unit and grammar tests
+        run: npm test
+
+      # Uses the extension's own installer, so this also tests downloading, verifying and unpacking.
+      - name: Install the latest Roc nightly
+        id: roc
+        run: npm run test:nightly
+
+      - name: Integration tests
+        if: runner.os != 'Linux'
+        run: npm run test:integration
+        env:
+          ROC_PATH: ${{ steps.roc.outputs.roc }}
+
+      - name: Integration tests
+        if: runner.os == 'Linux'
+        run: xvfb-run -a npm run test:integration
+        env:
+          ROC_PATH: ${{ steps.roc.outputs.roc }}
+
+      - name: Integration tests on the oldest supported VS Code
+        if: runner.os == 'Linux'
+        run: xvfb-run -a npm run test:integration
+        env:
+          ROC_PATH: ${{ steps.roc.outputs.roc }}
+          VSCODE_VERSION: 1.91.0
+
+  package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # ratchet:actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # ratchet:actions/setup-node@v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Package
+        run: npx vsce package --out roc.vsix
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # ratchet:actions/upload-artifact@v7.0.1
+        with:
+          name: roc-vsix
+          path: roc.vsix
+          if-no-files-found: error

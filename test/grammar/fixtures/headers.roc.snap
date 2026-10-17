@@ -1,0 +1,85 @@
+> #!/usr/bin/env roc
+  "#!/usr/bin/env roc" comment.line.shebang.roc
+> app [main!] { pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.20.0/abc.tar.zst" }
+  "app" keyword.other.header.roc
+  "[" punctuation.section.brackets.begin.roc
+  "main!" variable.other.roc
+  "]" punctuation.section.brackets.end.roc
+  "{" punctuation.section.braces.roc
+  "pf" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "platform" keyword.other.header.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "https://github.com/roc-lang/basic-cli/releases/download/0.20.0/abc.tar.zst" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "}" punctuation.section.braces.roc
+> 
+> import pf.Stdout
+  "import" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "pf" meta.import.roc entity.name.namespace.roc
+  "." meta.import.roc punctuation.accessor.roc
+  "Stdout" meta.import.roc entity.name.type.module.roc
+> import pf.Stdin exposing [line!]
+  "import" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "pf" meta.import.roc entity.name.namespace.roc
+  "." meta.import.roc punctuation.accessor.roc
+  "Stdin" meta.import.roc entity.name.type.module.roc
+  " " meta.import.roc
+  "exposing" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "[" meta.import.roc punctuation.section.brackets.roc
+  "line!" meta.import.roc variable.other.roc
+  "]" meta.import.roc punctuation.section.brackets.roc
+> import Json exposing [Decoder, ..]
+  "import" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "Json" meta.import.roc entity.name.type.module.roc
+  " " meta.import.roc
+  "exposing" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "[" meta.import.roc punctuation.section.brackets.roc
+  "Decoder" meta.import.roc entity.name.type.module.roc
+  "," meta.import.roc punctuation.separator.comma.roc
+  " " meta.import.roc
+  ".." meta.import.roc keyword.operator.spread.roc
+  "]" meta.import.roc punctuation.section.brackets.roc
+> import "data.json" as data : List(U8)
+  "import" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "\"" meta.import.roc string.quoted.double.roc punctuation.definition.string.begin.roc
+  "data.json" meta.import.roc string.quoted.double.roc
+  "\"" meta.import.roc string.quoted.double.roc punctuation.definition.string.end.roc
+  " " meta.import.roc
+  "as" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "data" meta.import.roc variable.other.roc
+  " " meta.import.roc
+  ":" meta.import.roc punctuation.separator.annotation.roc
+  " " meta.import.roc
+  "List" meta.import.roc entity.name.type.roc
+  "(" meta.import.roc punctuation.section.parens.begin.roc
+  "U8" meta.import.roc entity.name.type.roc
+  ")" meta.import.roc punctuation.section.parens.end.roc
+> 
+> main! = |_args| {
+  "main!" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "_args" meta.function.parameters.roc variable.other.unused.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	Stdout.line!("Hi")
+  "Stdout" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "line!" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Hi" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 

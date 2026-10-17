@@ -1,0 +1,929 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Roc",
+	"scopeName": "source.roc",
+	"fileTypes": [
+		"roc"
+	],
+	"patterns": [
+		{
+			"include": "#shebang"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#import"
+		},
+		{
+			"include": "#exposes-list"
+		},
+		{
+			"include": "#requires"
+		},
+		{
+			"include": "#type-declaration"
+		},
+		{
+			"include": "#annotation"
+		},
+		{
+			"include": "#function-definition"
+		},
+		{
+			"include": "#lambda"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#tuple-access"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#field-access"
+		},
+		{
+			"include": "#types-and-tags"
+		},
+		{
+			"include": "#identifiers"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#punctuation"
+		}
+	],
+	"repository": {
+		"shebang": {
+			"name": "comment.line.shebang.roc",
+			"match": "\\A#!.*$"
+		},
+		"doc-comment": {
+			"name": "comment.block.documentation.roc",
+			"begin": "^\\s*(##)(?=\\s|$)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.roc"
+				}
+			},
+			"while": "^\\s*(##)(?=\\s|$)",
+			"whileCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.roc"
+				}
+			},
+			"patterns": [
+				{
+					"begin": "\\s*(```+)\\s*(roc)\\s*$",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.markdown.roc"
+						},
+						"2": {
+							"name": "fenced_code.block.language.roc"
+						}
+					},
+					"end": "\\s*(```+)\\s*$",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.markdown.roc"
+						}
+					},
+					"contentName": "meta.embedded.block.roc",
+					"patterns": [
+						{
+							"include": "source.roc"
+						}
+					]
+				},
+				{
+					"name": "markup.raw.block.roc",
+					"begin": "\\s*(```+)[^`]*$",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.markdown.roc"
+						}
+					},
+					"end": "\\s*(```+)\\s*$",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.markdown.roc"
+						}
+					}
+				},
+				{
+					"name": "markup.inline.raw.roc",
+					"match": "`[^`]+`"
+				}
+			]
+		},
+		"comment": {
+			"name": "comment.line.number-sign.roc",
+			"match": "(#).*$",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.comment.roc"
+				}
+			}
+		},
+		"comments": {
+			"patterns": [
+				{
+					"include": "#doc-comment"
+				},
+				{
+					"include": "#comment"
+				}
+			]
+		},
+		"import": {
+			"name": "meta.import.roc",
+			"begin": "^\\s*(import)\\b",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.import.roc"
+				}
+			},
+			"end": "$",
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"include": "#string-double"
+				},
+				{
+					"name": "keyword.control.import.roc",
+					"match": "\\b(as|exposing)\\b(?![!$])"
+				},
+				{
+					"match": "(:)\\s*(.*?)(?=\\s*(?:#|$))",
+					"captures": {
+						"1": {
+							"name": "punctuation.separator.annotation.roc"
+						},
+						"2": {
+							"patterns": [
+								{
+									"include": "#type-expression"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "entity.name.type.module.roc",
+					"match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+				},
+				{
+					"name": "entity.name.namespace.roc",
+					"match": "\\b[a-z_][A-Za-z0-9_]*(?=\\.)"
+				},
+				{
+					"name": "variable.other.roc",
+					"match": "\\b[a-z_][A-Za-z0-9_]*!?"
+				},
+				{
+					"name": "keyword.operator.spread.roc",
+					"match": "\\.\\."
+				},
+				{
+					"include": "#punctuation"
+				}
+			]
+		},
+		"exposes-list": {
+			"begin": "\\b(module|package|exposes|app)\\s*(\\[)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.other.header.roc"
+				},
+				"2": {
+					"name": "punctuation.section.brackets.begin.roc"
+				}
+			},
+			"end": "(\\])",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.section.brackets.end.roc"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"name": "entity.name.type.roc",
+					"match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+				},
+				{
+					"name": "variable.other.roc",
+					"match": "\\b[a-z_][A-Za-z0-9_]*!?"
+				},
+				{
+					"name": "keyword.operator.spread.roc",
+					"match": "\\.\\."
+				},
+				{
+					"include": "#punctuation"
+				}
+			]
+		},
+		"requires": {
+			"comment": "A platform's `requires {} { main! : Str => Str }`: everything up to the end of the line is types.",
+			"begin": "\\b(requires)\\b",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.other.header.roc"
+				}
+			},
+			"end": "$",
+			"patterns": [
+				{
+					"include": "#type-expression"
+				}
+			]
+		},
+		"type-declaration": {
+			"name": "meta.type.declaration.roc",
+			"begin": "^\\s*([A-Z][A-Za-z0-9_]*)(?:(\\()([^)]*)(\\)))?\\s*(:=|::|:)(?![:=])",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.type.roc"
+				},
+				"2": {
+					"name": "punctuation.section.parens.begin.roc"
+				},
+				"3": {
+					"patterns": [
+						{
+							"name": "entity.name.type.parameter.roc",
+							"match": "\\b[a-z_][A-Za-z0-9_]*\\b"
+						},
+						{
+							"include": "#punctuation"
+						}
+					]
+				},
+				"4": {
+					"name": "punctuation.section.parens.end.roc"
+				},
+				"5": {
+					"name": "keyword.operator.type.definition.roc"
+				}
+			},
+			"end": "(?=\\.\\{)|$",
+			"patterns": [
+				{
+					"include": "#type-expression"
+				}
+			]
+		},
+		"annotation": {
+			"patterns": [
+				{
+					"name": "meta.annotation.function.roc",
+					"begin": "^\\s*([a-z_][A-Za-z0-9_]*!?)\\s+(:)(?![:=])(?=.*(?:->|=>))",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.function.roc"
+						},
+						"2": {
+							"name": "punctuation.separator.annotation.roc"
+						}
+					},
+					"end": "$",
+					"patterns": [
+						{
+							"include": "#type-expression"
+						}
+					]
+				},
+				{
+					"name": "meta.annotation.roc",
+					"begin": "^\\s*([a-z_][A-Za-z0-9_]*!?)\\s+(:)(?![:=])",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.other.definition.roc"
+						},
+						"2": {
+							"name": "punctuation.separator.annotation.roc"
+						}
+					},
+					"end": "$",
+					"patterns": [
+						{
+							"include": "#type-expression"
+						}
+					]
+				}
+			]
+		},
+		"type-expression": {
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"name": "keyword.other.where.roc",
+					"match": "\\b(where|implements)\\b(?![!$])"
+				},
+				{
+					"name": "meta.type.tag-union.roc",
+					"begin": "(?<!\\bwhere\\s)(\\[)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.section.brackets.begin.roc"
+						}
+					},
+					"end": "(\\])",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.section.brackets.end.roc"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"include": "#type-parens"
+						},
+						{
+							"match": "(\\.\\.)([a-z_][A-Za-z0-9_]*)?",
+							"captures": {
+								"1": {
+									"name": "keyword.operator.spread.roc"
+								},
+								"2": {
+									"name": "entity.name.type.parameter.roc"
+								}
+							}
+						},
+						{
+							"name": "constant.other.tag.roc",
+							"match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+						},
+						{
+							"include": "#punctuation"
+						}
+					]
+				},
+				{
+					"include": "#type-parens"
+				},
+				{
+					"name": "meta.type.record.roc",
+					"begin": "(\\{)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.section.braces.begin.roc"
+						}
+					},
+					"end": "(\\})",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.section.braces.end.roc"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"match": "\\b([a-z_][A-Za-z0-9_]*!?)\\s*(\\?:|:)(?![:=])",
+							"captures": {
+								"1": {
+									"name": "variable.other.property.roc"
+								},
+								"2": {
+									"name": "punctuation.separator.annotation.roc"
+								}
+							}
+						},
+						{
+							"name": "keyword.operator.default.roc",
+							"match": "\\?\\?"
+						},
+						{
+							"include": "#type-expression"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#numbers"
+						},
+						{
+							"include": "#tags"
+						}
+					]
+				},
+				{
+					"match": "(\\.)([a-z_][A-Za-z0-9_]*!?)",
+					"captures": {
+						"1": {
+							"name": "punctuation.accessor.roc"
+						},
+						"2": {
+							"name": "variable.other.property.roc"
+						}
+					}
+				},
+				{
+					"name": "entity.name.type.roc",
+					"match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+				},
+				{
+					"name": "variable.language.wildcard.roc",
+					"match": "\\b_\\b"
+				},
+				{
+					"name": "entity.name.type.parameter.roc",
+					"match": "\\b[a-z_][A-Za-z0-9_]*\\b"
+				},
+				{
+					"name": "keyword.operator.arrow.roc",
+					"match": "->|=>"
+				},
+				{
+					"name": "keyword.operator.spread.roc",
+					"match": "\\.\\."
+				},
+				{
+					"name": "punctuation.separator.annotation.roc",
+					"match": ":"
+				},
+				{
+					"include": "#punctuation"
+				}
+			]
+		},
+		"type-parens": {
+			"begin": "(\\()",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.section.parens.begin.roc"
+				}
+			},
+			"end": "(\\))",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.section.parens.end.roc"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#type-expression"
+				}
+			]
+		},
+		"function-definition": {
+			"match": "^\\s*([a-z_][A-Za-z0-9_]*!?)\\s*(=)(?![=>])(?=\\s*\\|)",
+			"captures": {
+				"1": {
+					"name": "entity.name.function.roc"
+				},
+				"2": {
+					"name": "keyword.operator.assignment.roc"
+				}
+			}
+		},
+		"lambda": {
+			"name": "meta.function.parameters.roc",
+			"begin": "(?:(?<=[=(,\\[{?>:])|^)\\s*(\\|)(?!>)(?=[^|\\n]*\\|)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.parameters.begin.roc"
+				}
+			},
+			"end": "(\\|)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.parameters.end.roc"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#numbers"
+				},
+				{
+					"name": "keyword.control.as.roc",
+					"match": "\\bas\\b"
+				},
+				{
+					"match": "\\b([a-z_][A-Za-z0-9_]*)\\s*(:)",
+					"captures": {
+						"1": {
+							"name": "variable.other.property.roc"
+						},
+						"2": {
+							"name": "punctuation.separator.key-value.roc"
+						}
+					}
+				},
+				{
+					"name": "variable.language.wildcard.roc",
+					"match": "\\b_\\b"
+				},
+				{
+					"name": "variable.other.unused.roc",
+					"match": "\\b_[A-Za-z0-9_]+\\b"
+				},
+				{
+					"name": "variable.parameter.roc",
+					"match": "\\b[a-z_][A-Za-z0-9_]*!?"
+				},
+				{
+					"include": "#types-and-tags"
+				},
+				{
+					"name": "keyword.operator.spread.roc",
+					"match": "\\.\\."
+				},
+				{
+					"include": "#punctuation"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"include": "#string-multiline"
+				},
+				{
+					"include": "#string-double"
+				},
+				{
+					"include": "#char"
+				}
+			]
+		},
+		"escape": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.roc",
+					"match": "\\\\(?:[nrt\\\"'\\\\$]|u\\([0-9A-Fa-f]{1,6}\\))"
+				},
+				{
+					"name": "invalid.illegal.escape.roc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"interpolation": {
+			"name": "meta.interpolation.roc",
+			"begin": "(\\$\\{)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.section.interpolation.begin.roc"
+				}
+			},
+			"end": "(\\})",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.section.interpolation.end.roc"
+				}
+			},
+			"contentName": "source.roc.embedded",
+			"patterns": [
+				{
+					"begin": "\\{",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.braces.roc"
+						}
+					},
+					"end": "\\}",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.braces.roc"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"include": "$self"
+				}
+			]
+		},
+		"string-double": {
+			"name": "string.quoted.double.roc",
+			"begin": "\\\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.roc"
+				}
+			},
+			"end": "(\\\")|$",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.string.end.roc"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#escape"
+				},
+				{
+					"include": "#interpolation"
+				}
+			]
+		},
+		"string-multiline": {
+			"name": "string.quoted.other.multiline.roc",
+			"begin": "\\\\\\\\",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.roc"
+				}
+			},
+			"end": "$",
+			"patterns": [
+				{
+					"include": "#escape"
+				},
+				{
+					"include": "#interpolation"
+				}
+			]
+		},
+		"char": {
+			"name": "string.quoted.single.roc",
+			"match": "(')(?:[^'\\\\]|(\\\\(?:[nrt\\\"'\\\\$]|u\\([0-9A-Fa-f]{1,6}\\))))(')",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.string.begin.roc"
+				},
+				"2": {
+					"name": "constant.character.escape.roc"
+				},
+				"3": {
+					"name": "punctuation.definition.string.end.roc"
+				}
+			}
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.loop.roc",
+					"match": "\\bfor!"
+				},
+				{
+					"name": "keyword.control.roc",
+					"match": "\\b(if|else|match|for|in|while|break|return)\\b(?![!$])"
+				},
+				{
+					"name": "keyword.other.roc",
+					"match": "\\b(crash|dbg|expect)\\b(?![!$])"
+				},
+				{
+					"name": "storage.modifier.roc",
+					"match": "\\bvar\\b(?![!$])"
+				},
+				{
+					"name": "keyword.operator.word.roc",
+					"match": "\\b(and|or)\\b(?![!$])"
+				},
+				{
+					"name": "keyword.control.import.roc",
+					"match": "\\b(import|exposing)\\b(?![!$])"
+				},
+				{
+					"name": "keyword.control.as.roc",
+					"match": "\\bas\\b(?![!$])"
+				},
+				{
+					"name": "keyword.other.header.roc",
+					"match": "\\b(app|module|package|packages|platform|hosted|interface|exposes|imports|provides|requires|generates|targets|with|has)\\b(?![!$])"
+				},
+				{
+					"name": "keyword.other.where.roc",
+					"match": "\\b(where|implements)\\b(?![!$])"
+				}
+			]
+		},
+		"numbers": {
+			"match": "(?<![\\w$])(0[xX][0-9A-Fa-f_]+|0[oO][0-7_]+|0[bB][01_]+|\\d[\\d_]*(?:\\.\\d[\\d_]*)?(?:[eE][-+]?\\d[\\d_]*)?)(?:(\\.)([A-Z][A-Za-z0-9_]*)|(u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64|dec)\\b)?",
+			"captures": {
+				"1": {
+					"name": "constant.numeric.roc"
+				},
+				"2": {
+					"name": "punctuation.accessor.roc"
+				},
+				"3": {
+					"name": "storage.type.numeric.roc"
+				},
+				"4": {
+					"name": "storage.type.numeric.roc"
+				}
+			}
+		},
+		"tuple-access": {
+			"match": "(?<=[A-Za-z0-9_!)\\]}])(\\.)(\\d+)\\b",
+			"captures": {
+				"1": {
+					"name": "punctuation.accessor.roc"
+				},
+				"2": {
+					"name": "variable.other.property.index.roc"
+				}
+			}
+		},
+		"field-access": {
+			"patterns": [
+				{
+					"match": "(\\.\\??)([a-z_][A-Za-z0-9_]*!?)(?=\\()",
+					"captures": {
+						"1": {
+							"name": "punctuation.accessor.roc"
+						},
+						"2": {
+							"name": "entity.name.function.method.roc"
+						}
+					}
+				},
+				{
+					"match": "(\\.\\??)([a-z_][A-Za-z0-9_]*!?)",
+					"captures": {
+						"1": {
+							"name": "punctuation.accessor.roc"
+						},
+						"2": {
+							"name": "variable.other.property.roc"
+						}
+					}
+				}
+			]
+		},
+		"types-and-tags": {
+			"patterns": [
+				{
+					"comment": "A qualifier such as `Str.` or `Bool.`, or a record builder suffix such as `}.Builder`. `Bool.True` ends in a tag.",
+					"match": "(?:(?<=\\.)|\\b)([A-Z][A-Za-z0-9_]*)(?=\\.)|(?<=[)}\\]]\\.)([A-Z][A-Za-z0-9_]*)\\b",
+					"captures": {
+						"1": {
+							"name": "entity.name.type.roc"
+						},
+						"2": {
+							"name": "entity.name.type.roc"
+						}
+					}
+				},
+				{
+					"include": "#tags"
+				}
+			]
+		},
+		"tags": {
+			"name": "constant.other.tag.roc",
+			"match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+		},
+		"identifiers": {
+			"patterns": [
+				{
+					"match": "\\b([a-z_][A-Za-z0-9_]*!?)(?=\\()",
+					"captures": {
+						"1": {
+							"name": "entity.name.function.call.roc"
+						}
+					}
+				},
+				{
+					"name": "variable.other.mutable.roc",
+					"match": "\\$[A-Za-z_][A-Za-z0-9_]*"
+				},
+				{
+					"name": "variable.language.wildcard.roc",
+					"match": "\\b_\\b"
+				},
+				{
+					"name": "variable.other.unused.roc",
+					"match": "\\b_[A-Za-z0-9_]+!?"
+				},
+				{
+					"match": "\\b([a-z_][A-Za-z0-9_]*!?)(:)(?![:=])",
+					"captures": {
+						"1": {
+							"name": "variable.other.property.roc"
+						},
+						"2": {
+							"name": "punctuation.separator.key-value.roc"
+						}
+					}
+				},
+				{
+					"name": "variable.other.roc",
+					"match": "\\b[a-z_][A-Za-z0-9_]*!?"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.pipe.roc",
+					"match": "\\|>"
+				},
+				{
+					"name": "keyword.operator.arrow.roc",
+					"match": "->|=>|<-"
+				},
+				{
+					"name": "keyword.operator.default.roc",
+					"match": "\\?\\?"
+				},
+				{
+					"name": "keyword.operator.try.roc",
+					"match": "\\?"
+				},
+				{
+					"name": "keyword.operator.type.definition.roc",
+					"match": ":=|::"
+				},
+				{
+					"name": "keyword.operator.comparison.roc",
+					"match": "==|!=|<=|>=|<|>"
+				},
+				{
+					"name": "keyword.operator.range.roc",
+					"match": "\\.\\.<|\\.\\.="
+				},
+				{
+					"name": "keyword.other.ellipsis.roc",
+					"match": "\\.\\.\\."
+				},
+				{
+					"name": "keyword.operator.spread.roc",
+					"match": "\\.\\."
+				},
+				{
+					"name": "keyword.operator.arithmetic.roc",
+					"match": "//|[+\\-*/%^]"
+				},
+				{
+					"name": "keyword.operator.assignment.roc",
+					"match": "="
+				},
+				{
+					"name": "keyword.operator.logical.roc",
+					"match": "!"
+				},
+				{
+					"name": "keyword.operator.alternative.roc",
+					"match": "\\|"
+				},
+				{
+					"name": "keyword.operator.roc",
+					"match": "&|\\\\"
+				},
+				{
+					"name": "punctuation.separator.annotation.roc",
+					"match": ":"
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.separator.comma.roc",
+					"match": ","
+				},
+				{
+					"name": "punctuation.section.braces.roc",
+					"match": "[{}]"
+				},
+				{
+					"name": "punctuation.section.brackets.roc",
+					"match": "[\\[\\]]"
+				},
+				{
+					"name": "punctuation.section.parens.roc",
+					"match": "[()]"
+				},
+				{
+					"name": "punctuation.accessor.roc",
+					"match": "\\."
+				}
+			]
+		}
+	}
+}
