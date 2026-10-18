@@ -107,4 +107,5 @@ jobs:
           name: vscode-logs-${{ matrix.os }}
           path: .vscode-test/user-data-*/logs
           if-no-files-found: ignore
+          include-hidden-files: true
 
