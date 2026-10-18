@@ -1,0 +1,12 @@
+[Content_Types].xml
+extension.vsixmanifest
+extension/LICENSE.txt
+extension/changelog.md
+extension/dist/extension.js
+extension/images/icon.png
+extension/images/icon.svg
+extension/language-configuration.json
+extension/package.json
+extension/readme.md
+extension/syntaxes/roc.markdown.tmLanguage.json
+extension/syntaxes/roc.tmLanguage.json

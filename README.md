@@ -62,12 +62,18 @@ npm ci                    # install pinned dependencies (install scripts are dis
 npm run check             # typecheck
 npm test                  # unit tests and grammar snapshot tests
 npm run test:nightly      # install the latest nightly into .vscode-test/roc with the extension's installer
-ROC_PATH=/path/to/roc npm run test:integration  # run in a real VS Code, trusted and restricted
+ROC_PATH=/path/to/roc npm run test:integration  # package, install and test the VSIX in a real VS Code
 npm run package           # build roc-<version>.vsix
 ```
+
+The integration tests install the packaged VSIX into a fresh VS Code profile, so packaging mistakes show up. They run once in a trusted and once in a restricted workspace, and check language features, editing, and restarting and stopping the language server. `ROC_VSIX` tests an existing VSIX instead of packaging one, `VSCODE_VERSION` picks the VS Code build, and `ROC_TEST_GREP` runs only the tests whose name contains it. CI also checks the VSIX contents against `test/vsix-files.txt`.
 
 Press <kbd>F5</kbd> to try changes in a new VS Code window.
 
 The TextMate grammar lives in `syntaxes/roc.tmLanguage.json`. After changing it, run `npm run test:grammar -- --update` and review the snapshot diff in `test/grammar/fixtures/`.
 
 Dependencies are deliberately few: `vscode-languageclient` at runtime, and Microsoft's or esbuild's own tooling for development. New versions are only adopted once they have been published for at least two weeks.
+
+## Thanks
+
+Thanks to [Luke Boswell](https://github.com/lukewilliamboswell), whose [roc-vscode](https://github.com/lukewilliamboswell/roc-vscode) showed how to test the packaged VSIX, and inspired the language feature, editing and server lifecycle tests here.
