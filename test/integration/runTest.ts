@@ -47,6 +47,8 @@ async function runSuite(suite: "trusted" | "restricted"): Promise<number> {
 		path.join(userDataDir, "User", "settings.json"),
 		JSON.stringify({
 			"roc.path": path.resolve(rocPath!),
+			// Lands in the Roc log under user-data-*/logs, which CI uploads when a test fails.
+			"roc.trace.server": "verbose",
 			"security.workspace.trust.startupPrompt": "never",
 			"security.workspace.trust.banner": "never",
 		}),
@@ -66,6 +68,8 @@ async function runSuite(suite: "trusted" | "restricted"): Promise<number> {
 		"--skip-release-notes",
 		`--user-data-dir=${userDataDir}`,
 		`--extensions-dir=${extensionsDir}`,
+		// Keep the language server trace in the Roc log.
+		"--log=roc-lang.roc:trace",
 		// An empty extension that hosts the tests, so the extension under test is the installed VSIX.
 		`--extensionDevelopmentPath=${path.join(root, "test/integration/host")}`,
 		`--extensionTestsPath=${path.join(root, "dist-test/integration/index.js")}`,

@@ -101,3 +101,10 @@ jobs:
           ROC_VSIX: roc.vsix
           VSCODE_VERSION: 1.91.0
 
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # ratchet:actions/upload-artifact@v7.0.1
+        if: failure()
+        with:
+          name: vscode-logs-${{ matrix.os }}
+          path: .vscode-test/user-data-*/logs
+          if-no-files-found: ignore
+
