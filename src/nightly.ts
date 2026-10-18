@@ -38,13 +38,15 @@ export interface InstallOptions {
 	onProgress?: (fraction: number | undefined) => void;
 }
 
-export async function fetchLatestRelease(signal?: AbortSignal): Promise<Release> {
+/** `token` is only for CI, where unauthenticated requests share a rate limit with every other runner. */
+export async function fetchLatestRelease(signal?: AbortSignal, token?: string): Promise<Release> {
 	const timeout = AbortSignal.timeout(30_000);
 	const response = await fetch(NIGHTLY_RELEASES_API, {
 		headers: {
 			Accept: "application/vnd.github+json",
 			"User-Agent": USER_AGENT,
 			"X-GitHub-Api-Version": "2022-11-28",
+			...(token ? { Authorization: `Bearer ${token}` } : {}),
 		},
 		signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
 	});

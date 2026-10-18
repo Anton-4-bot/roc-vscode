@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 import { fetchLatestRelease, installNightly, removeOtherNightlies } from "../../src/nightly";
 
 const storageDir = fileURLToPath(new URL("../../.vscode-test/roc", import.meta.url));
-const release = await fetchLatestRelease();
+const release = await fetchLatestRelease(undefined, process.env["GITHUB_TOKEN"]);
 const installed = await installNightly({ release, storageDir, platform: process.platform, arch: process.arch });
 await removeOtherNightlies(storageDir, installed.tag);
 

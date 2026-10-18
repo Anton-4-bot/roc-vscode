@@ -30,7 +30,8 @@ test("formats a document through the language server", async () => {
 	const edit = new vscode.WorkspaceEdit();
 	edit.set(document.uri, edits);
 	assert.ok(await vscode.workspace.applyEdit(edit));
-	assert.equal(document.getText(), "add : I64, I64 -> I64\nadd = |a, b| a + b\n");
+	// Git may check the fixture out with CRLF line endings, which formatting keeps.
+	assert.equal(document.getText().replaceAll("\r\n", "\n"), "add : I64, I64 -> I64\nadd = |a, b| a + b\n");
 	await closeAll();
 });
 

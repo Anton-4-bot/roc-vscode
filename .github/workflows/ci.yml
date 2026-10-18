@@ -72,6 +72,8 @@ jobs:
       - name: Install the latest Roc nightly
         id: roc
         run: npm run test:nightly
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # ratchet:actions/download-artifact@v8.0.1
         with:
