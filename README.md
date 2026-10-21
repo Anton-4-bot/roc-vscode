@@ -16,6 +16,10 @@ Official [Roc](https://www.roc-lang.org) language support, powered by the langua
 
 The language server is still experimental, so expect rough edges. Please report problems in the [roc repo](https://github.com/roc-lang/roc/issues) (language server) or [here](https://github.com/roc-lang/roc-vscode/issues) (extension).
 
+## Thanks
+
+Thanks to [Luke Boswell](https://github.com/lukewilliamboswell), whose [roc-vscode](https://github.com/lukewilliamboswell/roc-vscode) showed how to test the packaged VSIX, and inspired the language feature, editing and server lifecycle tests here.
+
 ## Getting `roc`
 
 The extension uses the first `roc` it finds:
@@ -73,7 +77,3 @@ Press <kbd>F5</kbd> to try changes in a new VS Code window.
 The TextMate grammar lives in `syntaxes/roc.tmLanguage.json`. After changing it, run `npm run test:grammar -- --update` and review the snapshot diff in `test/grammar/fixtures/`.
 
 Dependencies are deliberately few: `vscode-languageclient` at runtime, and Microsoft's or esbuild's own tooling for development. New versions are only adopted once they have been published for at least two weeks.
-
-## Thanks
-
-Thanks to [Luke Boswell](https://github.com/lukewilliamboswell), whose [roc-vscode](https://github.com/lukewilliamboswell/roc-vscode) showed how to test the packaged VSIX, and inspired the language feature, editing and server lifecycle tests here.

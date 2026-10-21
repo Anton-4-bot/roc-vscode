@@ -68,7 +68,7 @@ export async function installNightly(options: InstallOptions): Promise<Installed
 	const asset = selectNightlyAsset(release, platform, arch);
 	if (asset === undefined) {
 		throw new Error(
-			`There is no Roc nightly for ${platform} ${arch}. See https://www.roc-lang.org/install for building Roc from source.`,
+			`There is no Roc nightly for ${platform} ${arch}. See https://github.com/roc-lang/roc/blob/main/BUILDING_FROM_SOURCE.md for building Roc from source.`,
 		);
 	}
 	if (!isAllowedDownloadUrl(asset.browser_download_url) || !/^[\w.-]+$/.test(asset.name)) {
