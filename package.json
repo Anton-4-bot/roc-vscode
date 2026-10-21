@@ -1,0 +1,269 @@
+{
+	"name": "roc",
+	"displayName": "Roc",
+	"description": "Official Roc language support: syntax highlighting, diagnostics, formatting, hover, completion, rename and more.",
+	"version": "0.1.0",
+	"publisher": "roc-lang",
+	"license": "UPL-1.0",
+	"icon": "images/icon.png",
+	"homepage": "https://www.roc-lang.org",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/roc-lang/roc-vscode"
+	},
+	"bugs": {
+		"url": "https://github.com/roc-lang/roc-vscode/issues"
+	},
+	"engines": {
+		"vscode": "^1.91.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Formatters",
+		"Linters"
+	],
+	"keywords": [
+		"roc",
+		"roc-lang",
+		"functional"
+	],
+	"main": "./dist/extension.js",
+	"activationEvents": [
+		"onTaskType:roc"
+	],
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": "limited",
+			"description": "In restricted mode the Roc language server only formats and folds. Type checking, diagnostics, hover and other semantic features need a trusted workspace, because checking can download packages and run compile-time Roc code.",
+			"restrictedConfigurations": [
+				"roc.path",
+				"roc.server.args"
+			]
+		},
+		"virtualWorkspaces": false
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "roc",
+				"aliases": [
+					"Roc",
+					"roc"
+				],
+				"extensions": [
+					".roc"
+				],
+				"firstLine": "^#!.*\\broc\\b",
+				"configuration": "./language-configuration.json",
+				"icon": {
+					"light": "./images/icon.svg",
+					"dark": "./images/icon.svg"
+				}
+			}
+		],
+		"grammars": [
+			{
+				"language": "roc",
+				"scopeName": "source.roc",
+				"path": "./syntaxes/roc.tmLanguage.json"
+			},
+			{
+				"scopeName": "markdown.roc.codeblock",
+				"path": "./syntaxes/roc.markdown.tmLanguage.json",
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.roc": "roc"
+				}
+			}
+		],
+		"configurationDefaults": {
+			"[roc]": {
+				"editor.insertSpaces": false,
+				"editor.tabSize": 4,
+				"editor.detectIndentation": false,
+				"editor.formatOnSave": true
+			}
+		},
+		"configuration": {
+			"title": "Roc",
+			"properties": {
+				"roc.path": {
+					"type": "string",
+					"default": "",
+					"scope": "machine-overridable",
+					"markdownDescription": "Path to the `roc` executable. `${userHome}` and a leading `~` are expanded. Leave empty to use the nightly installed by this extension, or else `roc` from `PATH`."
+				},
+				"roc.server.args": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [
+						"experimental-lsp"
+					],
+					"scope": "machine-overridable",
+					"markdownDescription": "Arguments passed to `roc` to start the language server."
+				},
+				"roc.server.debugFlags": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"--debug-transport",
+							"--debug-build",
+							"--debug-syntax",
+							"--debug-server"
+						]
+					},
+					"uniqueItems": true,
+					"default": [],
+					"markdownDescription": "Debug logging for the language server. Logs are written to a file in the Roc cache directory; its path is printed in the **Roc** output channel. Note that `--debug-transport` logs contain the full contents of your files."
+				},
+				"roc.nightly.checkForUpdates": {
+					"type": "boolean",
+					"default": true,
+					"markdownDescription": "Once a week, check whether a newer Roc nightly is available. Only applies when using the nightly installed by this extension."
+				},
+				"roc.trace.server": {
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "Trace the communication between VS Code and the Roc language server in the Roc output channel."
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "roc.restartServer",
+				"title": "Restart Language Server",
+				"category": "Roc"
+			},
+			{
+				"command": "roc.showOutput",
+				"title": "Show Output",
+				"category": "Roc"
+			},
+			{
+				"command": "roc.installNightly",
+				"title": "Install or Update Nightly",
+				"category": "Roc"
+			},
+			{
+				"command": "roc.selectExecutable",
+				"title": "Select roc Executable…",
+				"category": "Roc"
+			},
+			{
+				"command": "roc.runFile",
+				"title": "Run File",
+				"category": "Roc",
+				"icon": "$(play)",
+				"enablement": "resourceLangId == roc"
+			},
+			{
+				"command": "roc.testFile",
+				"title": "Test File",
+				"category": "Roc",
+				"icon": "$(beaker)",
+				"enablement": "resourceLangId == roc"
+			}
+		],
+		"menus": {
+			"editor/title/run": [
+				{
+					"command": "roc.runFile",
+					"when": "resourceLangId == roc",
+					"group": "navigation@0"
+				},
+				{
+					"command": "roc.testFile",
+					"when": "resourceLangId == roc",
+					"group": "navigation@1"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "roc.runFile",
+					"when": "resourceLangId == roc",
+					"group": "roc@0"
+				},
+				{
+					"command": "roc.testFile",
+					"when": "resourceLangId == roc",
+					"group": "roc@1"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "roc.runFile",
+					"when": "resourceLangId == roc"
+				},
+				{
+					"command": "roc.testFile",
+					"when": "resourceLangId == roc"
+				}
+			]
+		},
+		"taskDefinitions": [
+			{
+				"type": "roc",
+				"required": [
+					"command"
+				],
+				"properties": {
+					"command": {
+						"type": "string",
+						"enum": [
+							"run",
+							"test",
+							"check",
+							"build"
+						],
+						"description": "The roc subcommand."
+					},
+					"file": {
+						"type": "string",
+						"description": "The .roc file, relative to the workspace folder. Defaults to main.roc."
+					},
+					"args": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "Extra arguments passed after the file."
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"build": "node build.mjs",
+		"watch": "node build.mjs --watch",
+		"check": "tsc --noEmit -p .",
+		"test": "node build.mjs --tests && node --test \"dist-test/unit/*.test.mjs\" && node dist-test/grammar/run.mjs",
+		"test:grammar": "node build.mjs --tests && node dist-test/grammar/run.mjs",
+		"test:integration": "node build.mjs --tests && node dist-test/integration/runTest.mjs",
+		"test:nightly": "node build.mjs --tests && node dist-test/nightly/install.mjs",
+		"vscode:prepublish": "node build.mjs --production",
+		"package": "vsce package"
+	},
+	"dependencies": {
+		"vscode-languageclient": "10.1.2"
+	},
+	"devDependencies": {
+		"@types/node": "20.19.43",
+		"@types/vscode": "1.91.0",
+		"@vscode/test-electron": "3.1.0",
+		"@vscode/vsce": "4.0.0",
+		"esbuild": "0.28.2",
+		"typescript": "6.0.3",
+		"vscode-oniguruma": "2.0.1",
+		"vscode-textmate": "9.3.2"
+	}
+}

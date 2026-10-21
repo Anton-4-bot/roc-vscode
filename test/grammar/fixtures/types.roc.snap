@@ -1,0 +1,234 @@
+> Point : { x : F64, y : F64 }
+  "Point" meta.type.declaration.roc entity.name.type.roc
+  " " meta.type.declaration.roc
+  ":" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "{" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "x" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "F64" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  "," meta.type.declaration.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "y" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "F64" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "}" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.end.roc
+> Shape := [Circle(F64), Rect({ w : F64, h : F64 }), ..others]
+  "Shape" meta.type.declaration.roc entity.name.type.roc
+  " " meta.type.declaration.roc
+  ":=" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "[" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.brackets.begin.roc
+  "Circle" meta.type.declaration.roc meta.type.tag-union.roc constant.other.tag.roc
+  "(" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.parens.begin.roc
+  "F64" meta.type.declaration.roc meta.type.tag-union.roc entity.name.type.roc
+  ")" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.parens.end.roc
+  "," meta.type.declaration.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc
+  "Rect" meta.type.declaration.roc meta.type.tag-union.roc constant.other.tag.roc
+  "(" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.parens.begin.roc
+  "{" meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc
+  "w" meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc
+  "F64" meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc entity.name.type.roc
+  "," meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc
+  "h" meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc
+  "F64" meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc entity.name.type.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc
+  "}" meta.type.declaration.roc meta.type.tag-union.roc meta.type.record.roc punctuation.section.braces.end.roc
+  ")" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.parens.end.roc
+  "," meta.type.declaration.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc
+  ".." meta.type.declaration.roc meta.type.tag-union.roc keyword.operator.spread.roc
+  "others" meta.type.declaration.roc meta.type.tag-union.roc entity.name.type.parameter.roc
+  "]" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.brackets.end.roc
+> Counter :: { count : U64 }.{
+  "Counter" meta.type.declaration.roc entity.name.type.roc
+  " " meta.type.declaration.roc
+  "::" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "{" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "count" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "U64" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "}" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.end.roc
+  "." punctuation.accessor.roc
+  "{" punctuation.section.braces.roc
+> 	new : {} -> Counter
+  "\t" meta.annotation.function.roc
+  "new" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "{" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  "}" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Counter" meta.annotation.function.roc entity.name.type.roc
+> 	new = |{}| { count: 0 }
+  "new" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "{" meta.function.parameters.roc punctuation.section.braces.roc
+  "}" meta.function.parameters.roc punctuation.section.braces.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+  "count" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "0" constant.numeric.roc
+  "}" punctuation.section.braces.roc
+> }
+  "}" punctuation.section.braces.roc
+> Config := { port : U16 ?? 8080, host ?: Str }
+  "Config" meta.type.declaration.roc entity.name.type.roc
+  " " meta.type.declaration.roc
+  ":=" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "{" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "port" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "U16" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "??" meta.type.declaration.roc meta.type.record.roc keyword.operator.default.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "8080" meta.type.declaration.roc meta.type.record.roc constant.numeric.roc
+  "," meta.type.declaration.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "host" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "?:" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "Str" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "}" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.end.roc
+> Pair(a, b) : (a, b)
+  "Pair" meta.type.declaration.roc entity.name.type.roc
+  "(" meta.type.declaration.roc punctuation.section.parens.begin.roc
+  "a" meta.type.declaration.roc entity.name.type.parameter.roc
+  "," meta.type.declaration.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc
+  "b" meta.type.declaration.roc entity.name.type.parameter.roc
+  ")" meta.type.declaration.roc punctuation.section.parens.end.roc
+  " " meta.type.declaration.roc
+  ":" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "(" meta.type.declaration.roc punctuation.section.parens.begin.roc
+  "a" meta.type.declaration.roc entity.name.type.parameter.roc
+  "," meta.type.declaration.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc
+  "b" meta.type.declaration.roc entity.name.type.parameter.roc
+  ")" meta.type.declaration.roc punctuation.section.parens.end.roc
+> 
+> map_try : Try(a, e), (a -> b) -> Try(b, e)
+  "map_try" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Try" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "e" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "b" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Try" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "b" meta.annotation.function.roc entity.name.type.parameter.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "e" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+> to_str_all : List(a) -> List(Str) where [a.to_str : a -> Str]
+  "to_str_all" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "List" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "List" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "where" meta.annotation.function.roc keyword.other.where.roc
+  " " meta.annotation.function.roc
+  "[" meta.annotation.function.roc punctuation.section.brackets.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  "." meta.annotation.function.roc punctuation.accessor.roc
+  "to_str" meta.annotation.function.roc variable.other.property.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  "]" meta.annotation.function.roc punctuation.section.brackets.roc
+> read! : Str => Try(Str, [NotFound, ..])
+  "read!" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "=>" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Try" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "[" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.begin.roc
+  "NotFound" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "," meta.annotation.function.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.tag-union.roc
+  ".." meta.annotation.function.roc meta.type.tag-union.roc keyword.operator.spread.roc
+  "]" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.end.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+> value : _
+  "value" meta.annotation.roc variable.other.definition.roc
+  " " meta.annotation.roc
+  ":" meta.annotation.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc
+  "_" meta.annotation.roc variable.language.wildcard.roc
+> 

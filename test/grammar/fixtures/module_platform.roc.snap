@@ -1,0 +1,102 @@
+> platform ""
+  "platform" keyword.other.header.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+>     requires {} { run! : Str => Str }
+  "requires" keyword.other.header.roc
+  "{" meta.type.record.roc punctuation.section.braces.begin.roc
+  "}" meta.type.record.roc punctuation.section.braces.end.roc
+  "{" meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.type.record.roc
+  "run!" meta.type.record.roc variable.other.property.roc
+  " " meta.type.record.roc
+  ":" meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.record.roc
+  "Str" meta.type.record.roc entity.name.type.roc
+  " " meta.type.record.roc
+  "=>" meta.type.record.roc keyword.operator.arrow.roc
+  " " meta.type.record.roc
+  "Str" meta.type.record.roc entity.name.type.roc
+  " " meta.type.record.roc
+  "}" meta.type.record.roc punctuation.section.braces.end.roc
+>     exposes [Host]
+  "exposes" keyword.other.header.roc
+  "[" punctuation.section.brackets.begin.roc
+  "Host" entity.name.type.roc
+  "]" punctuation.section.brackets.end.roc
+>     packages {}
+  "packages" keyword.other.header.roc
+  "{" punctuation.section.braces.roc
+  "}" punctuation.section.braces.roc
+>     provides { "roc_run": run_for_host! }
+  "provides" keyword.other.header.roc
+  "{" punctuation.section.braces.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "roc_run" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ":" punctuation.separator.annotation.roc
+  "run_for_host!" variable.other.roc
+  "}" punctuation.section.braces.roc
+>     hosted {
+  "hosted" keyword.other.header.roc
+  "{" punctuation.section.braces.roc
+>         "roc_host_alloc_count": Host.alloc_count!,
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "roc_host_alloc_count" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ":" punctuation.separator.annotation.roc
+  "Host" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "alloc_count!" variable.other.property.roc
+  "," punctuation.separator.comma.roc
+>     }
+  "}" punctuation.section.braces.roc
+>     targets: {
+  "targets" keyword.other.header.roc
+  ":" punctuation.separator.annotation.roc
+  "{" punctuation.section.braces.roc
+>         x64mac: { inputs: ["libhost.a", app] },
+  "x64mac" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "{" punctuation.section.braces.roc
+  "inputs" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "[" punctuation.section.brackets.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "libhost.a" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "app" keyword.other.header.roc
+  "]" punctuation.section.brackets.roc
+  "}" punctuation.section.braces.roc
+  "," punctuation.separator.comma.roc
+>     }
+  "}" punctuation.section.braces.roc
+> 
+> import Host
+  "import" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "Host" meta.import.roc entity.name.type.module.roc
+> 
+> run_for_host! : Str => Str
+  "run_for_host!" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "=>" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> run_for_host! = |input| run!(input)
+  "run_for_host!" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "input" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "run!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "input" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 

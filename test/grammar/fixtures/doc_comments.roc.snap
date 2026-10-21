@@ -1,0 +1,93 @@
+> ## Adds one.
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " Adds one." comment.block.documentation.roc
+> ##
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+> ## Uses `Num.add` under the hood:
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " Uses " comment.block.documentation.roc
+  "`Num.add`" comment.block.documentation.roc markup.inline.raw.roc
+  " under the hood:" comment.block.documentation.roc
+> ##
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+> ## ```roc
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " " comment.block.documentation.roc
+  "```" comment.block.documentation.roc punctuation.definition.markdown.roc
+  "roc" comment.block.documentation.roc fenced_code.block.language.roc
+> ## expect add_one(1) == 2
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " " comment.block.documentation.roc meta.embedded.block.roc
+  "expect" comment.block.documentation.roc meta.embedded.block.roc keyword.other.roc
+  " " comment.block.documentation.roc meta.embedded.block.roc
+  "add_one" comment.block.documentation.roc meta.embedded.block.roc entity.name.function.call.roc
+  "(" comment.block.documentation.roc meta.embedded.block.roc punctuation.section.parens.roc
+  "1" comment.block.documentation.roc meta.embedded.block.roc constant.numeric.roc
+  ")" comment.block.documentation.roc meta.embedded.block.roc punctuation.section.parens.roc
+  " " comment.block.documentation.roc meta.embedded.block.roc
+  "==" comment.block.documentation.roc meta.embedded.block.roc keyword.operator.comparison.roc
+  " " comment.block.documentation.roc meta.embedded.block.roc
+  "2" comment.block.documentation.roc meta.embedded.block.roc constant.numeric.roc
+> ## x = "string ${y}"
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " " comment.block.documentation.roc meta.embedded.block.roc
+  "x" comment.block.documentation.roc meta.embedded.block.roc variable.other.roc
+  " " comment.block.documentation.roc meta.embedded.block.roc
+  "=" comment.block.documentation.roc meta.embedded.block.roc keyword.operator.assignment.roc
+  " " comment.block.documentation.roc meta.embedded.block.roc
+  "\"" comment.block.documentation.roc meta.embedded.block.roc string.quoted.double.roc punctuation.definition.string.begin.roc
+  "string " comment.block.documentation.roc meta.embedded.block.roc string.quoted.double.roc
+  "${" comment.block.documentation.roc meta.embedded.block.roc string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "y" comment.block.documentation.roc meta.embedded.block.roc string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "}" comment.block.documentation.roc meta.embedded.block.roc string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\"" comment.block.documentation.roc meta.embedded.block.roc string.quoted.double.roc punctuation.definition.string.end.roc
+> ## ```
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " " comment.block.documentation.roc
+  "```" comment.block.documentation.roc punctuation.definition.markdown.roc
+> ##
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+> ## ```
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " " comment.block.documentation.roc markup.raw.block.roc
+  "```" comment.block.documentation.roc markup.raw.block.roc punctuation.definition.markdown.roc
+> ## plain block
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " plain block" comment.block.documentation.roc markup.raw.block.roc
+> ## ```
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " " comment.block.documentation.roc markup.raw.block.roc
+  "```" comment.block.documentation.roc markup.raw.block.roc punctuation.definition.markdown.roc
+> add_one : I64 -> I64
+  "add_one" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "I64" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "I64" meta.annotation.function.roc entity.name.type.roc
+> add_one = |n| n + 1 # trailing comment
+  "add_one" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "n" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "n" variable.other.roc
+  "+" keyword.operator.arithmetic.roc
+  "1" constant.numeric.roc
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " trailing comment" comment.line.number-sign.roc
+> 
+> # ## not a doc comment
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " ## not a doc comment" comment.line.number-sign.roc
+> x = 1 ## also not a doc comment
+  "x" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "1" constant.numeric.roc
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  "# also not a doc comment" comment.line.number-sign.roc
+> 

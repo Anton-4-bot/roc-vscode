@@ -1,0 +1,3218 @@
+> import "../../README.md" as readme : Str
+  "import" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "\"" meta.import.roc string.quoted.double.roc punctuation.definition.string.begin.roc
+  "../../README.md" meta.import.roc string.quoted.double.roc
+  "\"" meta.import.roc string.quoted.double.roc punctuation.definition.string.end.roc
+  " " meta.import.roc
+  "as" meta.import.roc keyword.control.import.roc
+  " " meta.import.roc
+  "readme" meta.import.roc variable.other.roc
+  " " meta.import.roc
+  ":" meta.import.roc punctuation.separator.annotation.roc
+  " " meta.import.roc
+  "Str" meta.import.roc entity.name.type.roc
+> 
+> ## Double hashtag for doc comment
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " Double hashtag for doc comment" comment.block.documentation.roc
+> number_operators : I64, I64 -> _
+  "number_operators" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "I64" meta.annotation.function.roc entity.name.type.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "I64" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "_" meta.annotation.function.roc variable.language.wildcard.roc
+> number_operators = |a, b| {
+  "number_operators" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "a" meta.function.parameters.roc variable.parameter.roc
+  "," meta.function.parameters.roc punctuation.separator.comma.roc
+  " " meta.function.parameters.roc
+  "b" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	a_f64 = I64.to_f64(a)
+  "a_f64" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "I64" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "to_f64" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "a" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 	b_f64 = I64.to_f64(b)
+  "b_f64" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "I64" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "to_f64" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "b" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	{
+  "{" punctuation.section.braces.roc
+> 		# binary operators
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " binary operators" comment.line.number-sign.roc
+> 		sum: a + b,
+  "sum" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "+" keyword.operator.arithmetic.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		diff: a - b,
+  "diff" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "-" keyword.operator.arithmetic.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		prod: a * b,
+  "prod" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "*" keyword.operator.arithmetic.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		div: a_f64 / b_f64,
+  "div" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a_f64" variable.other.roc
+  "/" keyword.operator.arithmetic.roc
+  "b_f64" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		div_trunc: a // b,
+  "div_trunc" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "//" keyword.operator.arithmetic.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		rem: a % b,
+  "rem" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "%" keyword.operator.arithmetic.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		eq: a == b,
+  "eq" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		neq: a != b,
+  "neq" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "!=" keyword.operator.comparison.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		lt: a < b,
+  "lt" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "<" keyword.operator.comparison.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		lteq: a <= b,
+  "lteq" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "<=" keyword.operator.comparison.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		gt: a > b,
+  "gt" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  ">" keyword.operator.comparison.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		gteq: a >= b,
+  "gteq" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  ">=" keyword.operator.comparison.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 
+> 		# `??` to provide a default value in case of `Err`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `??` to provide a default value in case of `Err`." comment.line.number-sign.roc
+> 		default: I64.from_str("not a number") ?? 0,
+  "default" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "I64" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "from_str" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "not a number" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+  "??" keyword.operator.default.roc
+  "0" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+> 
+> 		# unary operators
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " unary operators" comment.line.number-sign.roc
+> 		neg: -a,
+  "neg" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "-" keyword.operator.arithmetic.roc
+  "a" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 		# the last item can have a comma too
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " the last item can have a comma too" comment.line.number-sign.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> boolean_operators : Bool, Bool -> _
+  "boolean_operators" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Bool" meta.annotation.function.roc entity.name.type.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "Bool" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "_" meta.annotation.function.roc variable.language.wildcard.roc
+> boolean_operators = |a, b| {
+  "boolean_operators" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "a" meta.function.parameters.roc variable.parameter.roc
+  "," meta.function.parameters.roc punctuation.separator.comma.roc
+  " " meta.function.parameters.roc
+  "b" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	bool_and_keyword: a and b,
+  "bool_and_keyword" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "and" keyword.operator.word.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 	bool_or_keyword: a or b,
+  "bool_or_keyword" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "a" variable.other.roc
+  "or" keyword.operator.word.roc
+  "b" variable.other.roc
+  "," punctuation.separator.comma.roc
+> 	not_a: !a,
+  "not_a" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "!" keyword.operator.logical.roc
+  "a" variable.other.roc
+  "," punctuation.separator.comma.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> simple_match : [Red, Green, Blue, BabyBlue] -> Str
+  "simple_match" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "[" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.begin.roc
+  "Red" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "," meta.annotation.function.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.tag-union.roc
+  "Green" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "," meta.annotation.function.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.tag-union.roc
+  "Blue" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "," meta.annotation.function.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.tag-union.roc
+  "BabyBlue" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "]" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> simple_match = |color| {
+  "simple_match" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "color" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	match color {
+  "match" keyword.control.roc
+  "color" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 		Red => "The color is red."
+  "Red" constant.other.tag.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "The color is red." string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		Green => "The color is green."
+  "Green" constant.other.tag.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "The color is green." string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		Blue | BabyBlue => "The color is blue."
+  "Blue" constant.other.tag.roc
+  "|" keyword.operator.alternative.roc
+  "BabyBlue" constant.other.tag.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "The color is blue." string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> match_list_patterns : List(U64) -> U64
+  "match_list_patterns" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "List" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "U64" meta.annotation.function.roc entity.name.type.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "U64" meta.annotation.function.roc entity.name.type.roc
+> match_list_patterns = |lst| {
+  "match_list_patterns" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "lst" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	match lst {
+  "match" keyword.control.roc
+  "lst" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 		[] => 0
+  "[" punctuation.section.brackets.roc
+  "]" punctuation.section.brackets.roc
+  "=>" keyword.operator.arrow.roc
+  "0" constant.numeric.roc
+> 		[x] => x
+  "[" punctuation.section.brackets.roc
+  "x" variable.other.roc
+  "]" punctuation.section.brackets.roc
+  "=>" keyword.operator.arrow.roc
+  "x" variable.other.roc
+> 		[1, 2, 3] => 6
+  "[" punctuation.section.brackets.roc
+  "1" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "2" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "3" constant.numeric.roc
+  "]" punctuation.section.brackets.roc
+  "=>" keyword.operator.arrow.roc
+  "6" constant.numeric.roc
+> 		[1, 2, ..] => 66
+  "[" punctuation.section.brackets.roc
+  "1" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "2" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  ".." keyword.operator.spread.roc
+  "]" punctuation.section.brackets.roc
+  "=>" keyword.operator.arrow.roc
+  "66" constant.numeric.roc
+> 		[2, .., 1] => 88
+  "[" punctuation.section.brackets.roc
+  "2" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  ".." keyword.operator.spread.roc
+  "," punctuation.separator.comma.roc
+  "1" constant.numeric.roc
+  "]" punctuation.section.brackets.roc
+  "=>" keyword.operator.arrow.roc
+  "88" constant.numeric.roc
+> 		[1, .. as tail] => 77 + tail.len()
+  "[" punctuation.section.brackets.roc
+  "1" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  ".." keyword.operator.spread.roc
+  "as" keyword.control.as.roc
+  "tail" variable.other.roc
+  "]" punctuation.section.brackets.roc
+  "=>" keyword.operator.arrow.roc
+  "77" constant.numeric.roc
+  "+" keyword.operator.arithmetic.roc
+  "tail" variable.other.roc
+  "." punctuation.accessor.roc
+  "len" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 		[_head, 5] => 55
+  "[" punctuation.section.brackets.roc
+  "_head" variable.other.unused.roc
+  "," punctuation.separator.comma.roc
+  "5" constant.numeric.roc
+  "]" punctuation.section.brackets.roc
+  "=>" keyword.operator.arrow.roc
+  "55" constant.numeric.roc
+> 		[99, x] if x < 4 => 99 + x
+  "[" punctuation.section.brackets.roc
+  "99" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "x" variable.other.roc
+  "]" punctuation.section.brackets.roc
+  "if" keyword.control.roc
+  "x" variable.other.roc
+  "<" keyword.operator.comparison.roc
+  "4" constant.numeric.roc
+  "=>" keyword.operator.arrow.roc
+  "99" constant.numeric.roc
+  "+" keyword.operator.arithmetic.roc
+  "x" variable.other.roc
+> 
+> 		# Note: avoid overusing `_` in a match branch, in general you should
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Note: avoid overusing `_` in a match branch, in general you should" comment.line.number-sign.roc
+> 		# try to match all cases explicitly.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " try to match all cases explicitly." comment.line.number-sign.roc
+> 		_ => 100
+  "_" variable.language.wildcard.roc
+  "=>" keyword.operator.arrow.roc
+  "100" constant.numeric.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> match_tag_union_advanced : Try({}, [StdoutErr(Str), Other]) -> Str
+  "match_tag_union_advanced" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Try" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "{" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  "}" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.end.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "[" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.begin.roc
+  "StdoutErr" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "(" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.function.roc meta.type.tag-union.roc entity.name.type.roc
+  ")" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.parens.end.roc
+  "," meta.annotation.function.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.tag-union.roc
+  "Other" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "]" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.end.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> match_tag_union_advanced = |try|
+  "match_tag_union_advanced" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "try" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+> # `Try(a, b)` is the tag union `[Ok(a), Err(b)]` under the hood.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `Try(a, b)` is the tag union `[Ok(a), Err(b)]` under the hood." comment.line.number-sign.roc
+> 	match try {
+  "match" keyword.control.roc
+  "try" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 		Ok(_) =>
+  "Ok" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "_" variable.language.wildcard.roc
+  ")" punctuation.section.parens.roc
+  "=>" keyword.operator.arrow.roc
+> 			"Success"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Success" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 
+> 		Err(StdoutErr(err)) =>
+  "Err" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "StdoutErr" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "err" variable.other.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  "=>" keyword.operator.arrow.roc
+> 			"StdoutErr: ${Str.inspect(err)}"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "StdoutErr: " string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "Str" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.type.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "inspect" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.method.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "err" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 
+> 		Err(_) =>
+  "Err" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "_" variable.language.wildcard.roc
+  ")" punctuation.section.parens.roc
+  "=>" keyword.operator.arrow.roc
+> 			"Unknown error"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Unknown error" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		}
+  "}" punctuation.section.braces.roc
+> 
+> multiline_str : U64 -> Str
+  "multiline_str" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "U64" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> multiline_str = |number|
+  "multiline_str" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "number" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+> 	\\Line 1
+  "\\\\" string.quoted.other.multiline.roc punctuation.definition.string.begin.roc
+  "Line 1" string.quoted.other.multiline.roc
+> 	\\Line 2
+  "\\\\" string.quoted.other.multiline.roc punctuation.definition.string.begin.roc
+  "Line 2" string.quoted.other.multiline.roc
+> 	\\Line ${number.to_str()}
+  "\\\\" string.quoted.other.multiline.roc punctuation.definition.string.begin.roc
+  "Line " string.quoted.other.multiline.roc
+  "${" string.quoted.other.multiline.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "number" string.quoted.other.multiline.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "." string.quoted.other.multiline.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "to_str" string.quoted.other.multiline.roc meta.interpolation.roc source.roc.embedded entity.name.function.method.roc
+  "(" string.quoted.other.multiline.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  ")" string.quoted.other.multiline.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.other.multiline.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+> 
+> # end name with `!` for effectful functions
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " end name with `!` for effectful functions" comment.line.number-sign.roc
+> # `=>` shows effectfulness in the type signature
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `=>` shows effectfulness in the type signature" comment.line.number-sign.roc
+> effect_demo! : Str => {}
+  "effect_demo!" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "=>" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "{" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  "}" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.end.roc
+> effect_demo! = |msg|
+  "effect_demo!" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "msg" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+> 	echo!("${msg}\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "msg" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 
+> question_postfix : List(Str) -> Try(I64, _)
+  "question_postfix" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "List" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Try" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "I64" meta.annotation.function.roc entity.name.type.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "_" meta.annotation.function.roc variable.language.wildcard.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+> question_postfix = |strings| {
+  "question_postfix" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "strings" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	# `?` to immediately return the error if there is one
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `?` to immediately return the error if there is one" comment.line.number-sign.roc
+> 	first_str = strings.first()?
+  "first_str" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "strings" variable.other.roc
+  "." punctuation.accessor.roc
+  "first" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  "?" keyword.operator.try.roc
+> 	first_num = I64.from_str(first_str)?
+  "first_num" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "I64" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "from_str" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "first_str" variable.other.roc
+  ")" punctuation.section.parens.roc
+  "?" keyword.operator.try.roc
+> 
+> 	Ok(first_num)
+  "Ok" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "first_num" variable.other.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # `?` with a right-hand side maps the err payload before early returning.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `?` with a right-hand side maps the err payload before early returning." comment.line.number-sign.roc
+> # The rhs can be a bare tag (applied as a constructor) or any function-like
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " The rhs can be a bare tag (applied as a constructor) or any function-like" comment.line.number-sign.roc
+> # expression (e.g. a lambda); the err payload is passed as its argument.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " expression (e.g. a lambda); the err payload is passed as its argument." comment.line.number-sign.roc
+> question_with_err_map : List(Str) -> Try(Str, _)
+  "question_with_err_map" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "List" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Try" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "_" meta.annotation.function.roc variable.language.wildcard.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+> question_with_err_map = |strings| {
+  "question_with_err_map" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "strings" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	# `? NoFirstError` wraps the err as `NoFirstError(err)` before returning
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `? NoFirstError` wraps the err as `NoFirstError(err)` before returning" comment.line.number-sign.roc
+> 	first_str = strings.first() ? NoFirstError
+  "first_str" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "strings" variable.other.roc
+  "." punctuation.accessor.roc
+  "first" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  "?" keyword.operator.try.roc
+  "NoFirstError" constant.other.tag.roc
+> 	Ok(first_str)
+  "Ok" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "first_str" variable.other.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> question_with_err_lambda : List(Str) -> Try(Str, _)
+  "question_with_err_lambda" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "List" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Try" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "_" meta.annotation.function.roc variable.language.wildcard.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+> question_with_err_lambda = |strings| {
+  "question_with_err_lambda" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "strings" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	# `? |e| NoFirstError(e)` is the explicit lambda form
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `? |e| NoFirstError(e)` is the explicit lambda form" comment.line.number-sign.roc
+> 	first_str = strings.first() ? |e| NoFirstError(e)
+  "first_str" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "strings" variable.other.roc
+  "." punctuation.accessor.roc
+  "first" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  "?" keyword.operator.try.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "e" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "NoFirstError" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "e" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 	Ok(first_str)
+  "Ok" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "first_str" variable.other.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # Use crash for placeholders you want to fill in later.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Use crash for placeholders you want to fill in later." comment.line.number-sign.roc
+> implement_me_later : Str -> Str
+  "implement_me_later" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> implement_me_later = |str| {
+  "implement_me_later" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "str" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	if str == "" {
+  "if" keyword.control.roc
+  "str" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "{" punctuation.section.braces.roc
+> 		str
+  "str" variable.other.roc
+> 	} else {
+  "}" punctuation.section.braces.roc
+  "else" keyword.control.roc
+  "{" punctuation.section.braces.roc
+> 		crash "not implemented"
+  "crash" keyword.other.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "not implemented" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # for loops can be easier to think about than List.fold (previously `List.walk`)
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " for loops can be easier to think about than List.fold (previously `List.walk`)" comment.line.number-sign.roc
+> for_loop = |num_list| {
+  "for_loop" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "num_list" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	var $sum = 0
+  "var" storage.modifier.roc
+  "$sum" variable.other.mutable.roc
+  "=" keyword.operator.assignment.roc
+  "0" constant.numeric.roc
+> 
+> 	for num in num_list {
+  "for" keyword.control.roc
+  "num" variable.other.roc
+  "in" keyword.control.roc
+  "num_list" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 		$sum = $sum + num
+  "$sum" variable.other.mutable.roc
+  "=" keyword.operator.assignment.roc
+  "$sum" variable.other.mutable.roc
+  "+" keyword.operator.arithmetic.roc
+  "num" variable.other.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> 
+> 	$sum
+  "$sum" variable.other.mutable.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # break exits a for or while loop early
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " break exits a for or while loop early" comment.line.number-sign.roc
+> break_in_for_loop = |bool_list| {
+  "break_in_for_loop" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "bool_list" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	var $allTrue = True
+  "var" storage.modifier.roc
+  "$allTrue" variable.other.mutable.roc
+  "=" keyword.operator.assignment.roc
+  "True" constant.other.tag.roc
+> 	for b in bool_list {
+  "for" keyword.control.roc
+  "b" variable.other.roc
+  "in" keyword.control.roc
+  "bool_list" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 		if b == False {
+  "if" keyword.control.roc
+  "b" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "False" constant.other.tag.roc
+  "{" punctuation.section.braces.roc
+> 			$allTrue = False
+  "$allTrue" variable.other.mutable.roc
+  "=" keyword.operator.assignment.roc
+  "False" constant.other.tag.roc
+> 			break
+  "break" keyword.control.roc
+> 		} else {
+  "}" punctuation.section.braces.roc
+  "else" keyword.control.roc
+  "{" punctuation.section.braces.roc
+> 			{}
+  "{" punctuation.section.braces.roc
+  "}" punctuation.section.braces.roc
+> 		}
+  "}" punctuation.section.braces.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> 	$allTrue
+  "$allTrue" variable.other.mutable.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> while_loop = |limit| {
+  "while_loop" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "limit" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	var $count = 0
+  "var" storage.modifier.roc
+  "$count" variable.other.mutable.roc
+  "=" keyword.operator.assignment.roc
+  "0" constant.numeric.roc
+> 	var $sum = 0
+  "var" storage.modifier.roc
+  "$sum" variable.other.mutable.roc
+  "=" keyword.operator.assignment.roc
+  "0" constant.numeric.roc
+> 
+> 	while $count < limit {
+  "while" keyword.control.roc
+  "$count" variable.other.mutable.roc
+  "<" keyword.operator.comparison.roc
+  "limit" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 		$sum = $sum + $count
+  "$sum" variable.other.mutable.roc
+  "=" keyword.operator.assignment.roc
+  "$sum" variable.other.mutable.roc
+  "+" keyword.operator.arithmetic.roc
+  "$count" variable.other.mutable.roc
+> 		$count = $count + 1
+  "$count" variable.other.mutable.roc
+  "=" keyword.operator.assignment.roc
+  "$count" variable.other.mutable.roc
+  "+" keyword.operator.arithmetic.roc
+  "1" constant.numeric.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> 
+> 	$sum
+  "$sum" variable.other.mutable.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> print! = |something| {
+  "print!" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "something" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	echo!("${Str.inspect(something)}\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "Str" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.type.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "inspect" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.method.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "something" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> dbg_keyword = || {
+  "dbg_keyword" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	foo : Dec
+  "\t" meta.annotation.roc
+  "foo" meta.annotation.roc variable.other.definition.roc
+  " " meta.annotation.roc
+  ":" meta.annotation.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc
+  "Dec" meta.annotation.roc entity.name.type.roc
+> 	foo = 42.0
+  "foo" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "42.0" constant.numeric.roc
+> 
+> 	dbg foo
+  "dbg" keyword.other.roc
+  "foo" variable.other.roc
+> 
+> 	# This variation does not work yet:
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " This variation does not work yet:" comment.line.number-sign.roc
+> 	# bar = dbg 43
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " bar = dbg 43" comment.line.number-sign.roc
+> 
+> 	foo
+  "foo" variable.other.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> if_demo : U64 -> Str
+  "if_demo" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "U64" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> if_demo = |num| {
+  "if_demo" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "num" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	# every if must have an else branch!
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " every if must have an else branch!" comment.line.number-sign.roc
+> 	one_line_if = if num == 1 "One" else "NotOne"
+  "one_line_if" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "if" keyword.control.roc
+  "num" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "1" constant.numeric.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "One" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "else" keyword.control.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "NotOne" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 
+> 	two_line_if =
+  "two_line_if" variable.other.roc
+  "=" keyword.operator.assignment.roc
+> 		if num == 2
+  "if" keyword.control.roc
+  "num" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "2" constant.numeric.roc
+> 			"Two"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Two" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		else
+  "else" keyword.control.roc
+> 			"NotTwo"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "NotTwo" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 
+> 	with_curlies =
+  "with_curlies" variable.other.roc
+  "=" keyword.operator.assignment.roc
+> 		if num == 5 {
+  "if" keyword.control.roc
+  "num" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "5" constant.numeric.roc
+  "{" punctuation.section.braces.roc
+> 			"Five"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Five" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		} else {
+  "}" punctuation.section.braces.roc
+  "else" keyword.control.roc
+  "{" punctuation.section.braces.roc
+> 			"NotFive"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "NotFive" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		}
+  "}" punctuation.section.braces.roc
+> 
+> 	# else if
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " else if" comment.line.number-sign.roc
+> 	if num == 3
+  "if" keyword.control.roc
+  "num" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "3" constant.numeric.roc
+> 		"Three"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Three" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	else if num == 4
+  "else" keyword.control.roc
+  "if" keyword.control.roc
+  "num" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "4" constant.numeric.roc
+> 		"Four"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Four" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	else
+  "else" keyword.control.roc
+> 		one_line_if.concat(two_line_if).concat(with_curlies)
+  "one_line_if" variable.other.roc
+  "." punctuation.accessor.roc
+  "concat" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "two_line_if" variable.other.roc
+  ")" punctuation.section.parens.roc
+  "." punctuation.accessor.roc
+  "concat" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "with_curlies" variable.other.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> tuple_demo =
+  "tuple_demo" variable.other.roc
+  "=" keyword.operator.assignment.roc
+> # tuples can contain multiple types
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " tuples can contain multiple types" comment.line.number-sign.roc
+> 	("Roc", 1)
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Roc" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "1" constant.numeric.roc
+  ")" punctuation.section.parens.roc
+> 
+> # Here we use a type variable `a` to indicate this function works for a list of any type.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Here we use a type variable `a` to indicate this function works for a list of any type." comment.line.number-sign.roc
+> type_var : List(a) -> List(a)
+  "type_var" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "List" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "List" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+> type_var = |lst| lst
+  "type_var" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "lst" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "lst" variable.other.roc
+> 
+> destructuring = || {
+  "destructuring" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	tup : (Str, Dec)
+  "\t" meta.annotation.roc
+  "tup" meta.annotation.roc variable.other.definition.roc
+  " " meta.annotation.roc
+  ":" meta.annotation.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc
+  "(" meta.annotation.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.roc entity.name.type.roc
+  "," meta.annotation.roc punctuation.separator.comma.roc
+  " " meta.annotation.roc
+  "Dec" meta.annotation.roc entity.name.type.roc
+  ")" meta.annotation.roc punctuation.section.parens.end.roc
+> 	tup = ("Roc", 1.0)
+  "tup" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Roc" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "1.0" constant.numeric.roc
+  ")" punctuation.section.parens.roc
+> 	(str, num) = tup
+  "(" punctuation.section.parens.roc
+  "str" variable.other.roc
+  "," punctuation.separator.comma.roc
+  "num" variable.other.roc
+  ")" punctuation.section.parens.roc
+  "=" keyword.operator.assignment.roc
+  "tup" variable.other.roc
+> 
+> 	rec : { x : Dec, y : Dec }
+  "\t" meta.annotation.roc
+  "rec" meta.annotation.roc variable.other.definition.roc
+  " " meta.annotation.roc
+  ":" meta.annotation.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc
+  "{" meta.annotation.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.annotation.roc meta.type.record.roc
+  "x" meta.annotation.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.roc meta.type.record.roc
+  ":" meta.annotation.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc meta.type.record.roc
+  "Dec" meta.annotation.roc meta.type.record.roc entity.name.type.roc
+  "," meta.annotation.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.annotation.roc meta.type.record.roc
+  "y" meta.annotation.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.roc meta.type.record.roc
+  ":" meta.annotation.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc meta.type.record.roc
+  "Dec" meta.annotation.roc meta.type.record.roc entity.name.type.roc
+  " " meta.annotation.roc meta.type.record.roc
+  "}" meta.annotation.roc meta.type.record.roc punctuation.section.braces.end.roc
+> 	rec = { x: 1.0, y: tup.1 } # tuple access with `.index`
+  "rec" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "{" punctuation.section.braces.roc
+  "x" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "1.0" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "y" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "tup" variable.other.roc
+  "." punctuation.accessor.roc
+  "1" variable.other.property.index.roc
+  "}" punctuation.section.braces.roc
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " tuple access with `.index`" comment.line.number-sign.roc
+> 	{ x, y } = rec
+  "{" punctuation.section.braces.roc
+  "x" variable.other.roc
+  "," punctuation.separator.comma.roc
+  "y" variable.other.roc
+  "}" punctuation.section.braces.roc
+  "=" keyword.operator.assignment.roc
+  "rec" variable.other.roc
+> 
+> 	(str, num, x, y)
+  "(" punctuation.section.parens.roc
+  "str" variable.other.roc
+  "," punctuation.separator.comma.roc
+  "num" variable.other.roc
+  "," punctuation.separator.comma.roc
+  "x" variable.other.roc
+  "," punctuation.separator.comma.roc
+  "y" variable.other.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # A record builder combines wrapped field values using the suffix type's `map2`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " A record builder combines wrapped field values using the suffix type's `map2`." comment.line.number-sign.roc
+> # Its type variables let each field have a different type and the result be a record.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Its type variables let each field have a different type and the result be a record." comment.line.number-sign.roc
+> Builder(a) := { value : a }.{
+  "Builder" meta.type.declaration.roc entity.name.type.roc
+  "(" meta.type.declaration.roc punctuation.section.parens.begin.roc
+  "a" meta.type.declaration.roc entity.name.type.parameter.roc
+  ")" meta.type.declaration.roc punctuation.section.parens.end.roc
+  " " meta.type.declaration.roc
+  ":=" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "{" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "value" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "a" meta.type.declaration.roc meta.type.record.roc entity.name.type.parameter.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "}" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.end.roc
+  "." punctuation.accessor.roc
+  "{" punctuation.section.braces.roc
+> 	pure : a -> Builder(a)
+  "\t" meta.annotation.function.roc
+  "pure" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Builder" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+> 	pure = |x| { value: x }
+  "pure" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "x" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+  "value" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "x" variable.other.roc
+  "}" punctuation.section.braces.roc
+> 
+> 	map2 : Builder(a), Builder(b), (a, b -> c) -> Builder(c)
+  "\t" meta.annotation.function.roc
+  "map2" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Builder" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "Builder" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "b" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "b" meta.annotation.function.roc entity.name.type.parameter.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "c" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Builder" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "c" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+> 	map2 = |a, b, combine| { value: combine(a.value, b.value) }
+  "map2" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "a" meta.function.parameters.roc variable.parameter.roc
+  "," meta.function.parameters.roc punctuation.separator.comma.roc
+  " " meta.function.parameters.roc
+  "b" meta.function.parameters.roc variable.parameter.roc
+  "," meta.function.parameters.roc punctuation.separator.comma.roc
+  " " meta.function.parameters.roc
+  "combine" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+  "value" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "combine" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "a" variable.other.roc
+  "." punctuation.accessor.roc
+  "value" variable.other.property.roc
+  "," punctuation.separator.comma.roc
+  "b" variable.other.roc
+  "." punctuation.accessor.roc
+  "value" variable.other.property.roc
+  ")" punctuation.section.parens.roc
+  "}" punctuation.section.braces.roc
+> 
+> 	run : Builder(a) -> a
+  "\t" meta.annotation.function.roc
+  "run" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Builder" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+> 	run = |builder| builder.value
+  "run" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "builder" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "builder" variable.other.roc
+  "." punctuation.accessor.roc
+  "value" variable.other.property.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> record_builder = || {
+  "record_builder" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	built = {
+  "built" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "{" punctuation.section.braces.roc
+> 		count: Builder.pure(42.U64),
+  "count" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "Builder" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "pure" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "42" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "U64" storage.type.numeric.roc
+  ")" punctuation.section.parens.roc
+  "," punctuation.separator.comma.roc
+> 		name: Builder.pure("Roc"),
+  "name" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "Builder" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "pure" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Roc" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+  "," punctuation.separator.comma.roc
+> 	}.Builder
+  "}" punctuation.section.braces.roc
+  "." punctuation.accessor.roc
+  "Builder" entity.name.type.roc
+> 	# The two-field builder above calls Builder.map2 with a function that makes the record.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " The two-field builder above calls Builder.map2 with a function that makes the record." comment.line.number-sign.roc
+> 	built.run()
+  "built" variable.other.roc
+  "." punctuation.accessor.roc
+  "run" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> NominalTypeRecord := { x : U64 }
+  "NominalTypeRecord" meta.type.declaration.roc entity.name.type.roc
+  " " meta.type.declaration.roc
+  ":=" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "{" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "x" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "U64" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "}" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.end.roc
+> 
+> # `Type.{ fields }` also works as a pattern, destructuring a nominal type's
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `Type.{ fields }` also works as a pattern, destructuring a nominal type's" comment.line.number-sign.roc
+> # backing record directly.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " backing record directly." comment.line.number-sign.roc
+> destructure_nominal_type : NominalTypeRecord -> U64
+  "destructure_nominal_type" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "NominalTypeRecord" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "U64" meta.annotation.function.roc entity.name.type.roc
+> destructure_nominal_type = |NominalTypeRecord.{ x }| x
+  "destructure_nominal_type" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "NominalTypeRecord" meta.function.parameters.roc entity.name.type.roc
+  "." meta.function.parameters.roc punctuation.accessor.roc
+  "{" meta.function.parameters.roc punctuation.section.braces.roc
+  " " meta.function.parameters.roc
+  "x" meta.function.parameters.roc variable.parameter.roc
+  " " meta.function.parameters.roc
+  "}" meta.function.parameters.roc punctuation.section.braces.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "x" variable.other.roc
+> 
+> # TODO not sure if still planned for implementation
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " TODO not sure if still planned for implementation" comment.line.number-sign.roc
+> # record_update = {
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " record_update = {" comment.line.number-sign.roc
+> #     rec = { x: 1, y: 2 }
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  "     rec = { x: 1, y: 2 }" comment.line.number-sign.roc
+> #     rec2 = { rec & y: 3 }
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  "     rec2 = { rec & y: 3 }" comment.line.number-sign.roc
+> #     rec2
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  "     rec2" comment.line.number-sign.roc
+> # }
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " }" comment.line.number-sign.roc
+> 
+> record_update_2 : { name : Str, age : I64 } -> { name : Str, age : I64 }
+  "record_update_2" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "{" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "name" meta.annotation.function.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  ":" meta.annotation.function.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "Str" meta.annotation.function.roc meta.type.record.roc entity.name.type.roc
+  "," meta.annotation.function.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "age" meta.annotation.function.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  ":" meta.annotation.function.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "I64" meta.annotation.function.roc meta.type.record.roc entity.name.type.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "}" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "{" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "name" meta.annotation.function.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  ":" meta.annotation.function.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "Str" meta.annotation.function.roc meta.type.record.roc entity.name.type.roc
+  "," meta.annotation.function.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "age" meta.annotation.function.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  ":" meta.annotation.function.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "I64" meta.annotation.function.roc meta.type.record.roc entity.name.type.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "}" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.end.roc
+> record_update_2 = |person| {
+  "record_update_2" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "person" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	{ ..person, age: 31 }
+  "{" punctuation.section.braces.roc
+  ".." keyword.operator.spread.roc
+  "person" variable.other.roc
+  "," punctuation.separator.comma.roc
+  "age" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "31" constant.numeric.roc
+  "}" punctuation.section.braces.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # `..rest` in a record pattern binds every field you did not name as a new
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `..rest` in a record pattern binds every field you did not name as a new" comment.line.number-sign.roc
+> # record, so it doubles as a way to remove a field: `rest` is `person` without `email`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " record, so it doubles as a way to remove a field: `rest` is `person` without `email`." comment.line.number-sign.roc
+> remove_record_field : { name : Str, age : I64, email : Str } -> { name : Str, age : I64 }
+  "remove_record_field" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "{" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "name" meta.annotation.function.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  ":" meta.annotation.function.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "Str" meta.annotation.function.roc meta.type.record.roc entity.name.type.roc
+  "," meta.annotation.function.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "age" meta.annotation.function.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  ":" meta.annotation.function.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "I64" meta.annotation.function.roc meta.type.record.roc entity.name.type.roc
+  "," meta.annotation.function.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "email" meta.annotation.function.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  ":" meta.annotation.function.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "Str" meta.annotation.function.roc meta.type.record.roc entity.name.type.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "}" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "{" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "name" meta.annotation.function.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  ":" meta.annotation.function.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "Str" meta.annotation.function.roc meta.type.record.roc entity.name.type.roc
+  "," meta.annotation.function.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "age" meta.annotation.function.roc meta.type.record.roc variable.other.property.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  ":" meta.annotation.function.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "I64" meta.annotation.function.roc meta.type.record.roc entity.name.type.roc
+  " " meta.annotation.function.roc meta.type.record.roc
+  "}" meta.annotation.function.roc meta.type.record.roc punctuation.section.braces.end.roc
+> remove_record_field = |person| {
+  "remove_record_field" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "person" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	{ email: _, ..rest } = person
+  "{" punctuation.section.braces.roc
+  "email" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "_" variable.language.wildcard.roc
+  "," punctuation.separator.comma.roc
+  ".." keyword.operator.spread.roc
+  "rest" variable.other.roc
+  "}" punctuation.section.braces.roc
+  "=" keyword.operator.assignment.roc
+  "person" variable.other.roc
+> 	rest
+  "rest" variable.other.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # A record field can have a default value (`field : Type ?? default`) or be
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " A record field can have a default value (`field : Type ?? default`) or be" comment.line.number-sign.roc
+> # optional (`field ?: Type`). Both let you leave the field out when you build the record.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " optional (`field ?: Type`). Both let you leave the field out when you build the record." comment.line.number-sign.roc
+> # A defaulted field is always there when you read it, so you read it with plain `.field`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " A defaulted field is always there when you read it, so you read it with plain `.field`." comment.line.number-sign.roc
+> # An optional field may be missing, so you read it with `.?field`, which gives you a `Try`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " An optional field may be missing, so you read it with `.?field`, which gives you a `Try`." comment.line.number-sign.roc
+> # Defaults are only allowed on a nominal (`:=`) type declaration's backing record,
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Defaults are only allowed on a nominal (`:=`) type declaration's backing record," comment.line.number-sign.roc
+> # so every construction that omits a defaulted field is an explicit `ServerConfig.{...}`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " so every construction that omits a defaulted field is an explicit `ServerConfig.{...}`." comment.line.number-sign.roc
+> ServerConfig := { host : Str, port : U16 ?? 8080, timeout_ms ?: U64 }
+  "ServerConfig" meta.type.declaration.roc entity.name.type.roc
+  " " meta.type.declaration.roc
+  ":=" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "{" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.begin.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "host" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "Str" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  "," meta.type.declaration.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "port" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "U16" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "??" meta.type.declaration.roc meta.type.record.roc keyword.operator.default.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "8080" meta.type.declaration.roc meta.type.record.roc constant.numeric.roc
+  "," meta.type.declaration.roc meta.type.record.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "timeout_ms" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "?:" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "U64" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "}" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.end.roc
+> 
+> describe_config : ServerConfig -> Str
+  "describe_config" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "ServerConfig" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> describe_config = |config| {
+  "describe_config" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "config" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	timeout_str = match config.?timeout_ms {
+  "timeout_str" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "match" keyword.control.roc
+  "config" variable.other.roc
+  ".?" punctuation.accessor.roc
+  "timeout_ms" variable.other.property.roc
+  "{" punctuation.section.braces.roc
+> 		Ok(ms) => "${ms.to_str()}ms"
+  "Ok" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "ms" variable.other.roc
+  ")" punctuation.section.parens.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "ms" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "to_str" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.method.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "ms" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		Err(MissingField) => "no timeout"
+  "Err" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "MissingField" constant.other.tag.roc
+  ")" punctuation.section.parens.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "no timeout" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> 
+> 	# `config.port` needs no unwrapping, it's the default when it wasn't provided
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `config.port` needs no unwrapping, it's the default when it wasn't provided" comment.line.number-sign.roc
+> 	"${config.host}:${config.port.to_str()} (${timeout_str})"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "config" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "host" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.property.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  ":" string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "config" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "port" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.property.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "to_str" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.method.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  " (" string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "timeout_str" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  ")" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> number_literals = {
+  "number_literals" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "{" punctuation.section.braces.roc
+> 	usage_based: 5, # defaults to Dec
+  "usage_based" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " defaults to Dec" comment.line.number-sign.roc
+> 	explicit_u8: 5.U8, # Note that most of the time you will want to specify the type in the type signature instead.
+  "explicit_u8" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "U8" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Note that most of the time you will want to specify the type in the type signature instead." comment.line.number-sign.roc
+> 	explicit_i8: 5.I8,
+  "explicit_i8" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "I8" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	explicit_u16: 5.U16,
+  "explicit_u16" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "U16" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	explicit_i16: 5.I16,
+  "explicit_i16" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "I16" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	explicit_u32: 5.U32,
+  "explicit_u32" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "U32" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	explicit_i32: 5.I32,
+  "explicit_i32" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "I32" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	explicit_u64: 5.U64,
+  "explicit_u64" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "U64" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	explicit_i64: 5.I64,
+  "explicit_i64" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "I64" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	explicit_u128: 5.U128,
+  "explicit_u128" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "U128" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	explicit_i128: 5.I128,
+  "explicit_i128" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5" constant.numeric.roc
+  "." punctuation.accessor.roc
+  "I128" storage.type.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	# Note: F32, F64, and Dec literals use type inference which doesn't work with Str.inspect so they are omitted here.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Note: F32, F64, and Dec literals use type inference which doesn't work with Str.inspect so they are omitted here." comment.line.number-sign.roc
+> 	hex: 0x5,
+  "hex" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "0x5" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	octal: 0o5,
+  "octal" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "0o5" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+> 	binary: 0b0101,
+  "binary" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "0b0101" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # Opaque type
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Opaque type" comment.line.number-sign.roc
+> # Useful if you want to hide fields e.g. so users of the type can not access some implementation detail you did not want to expose.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Useful if you want to hide fields e.g. so users of the type can not access some implementation detail you did not want to expose." comment.line.number-sign.roc
+> Secret :: {
+  "Secret" meta.type.declaration.roc entity.name.type.roc
+  " " meta.type.declaration.roc
+  "::" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "{" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.begin.roc
+> 	key : Str,
+  "\t" meta.type.declaration.roc meta.type.record.roc
+  "key" meta.type.declaration.roc meta.type.record.roc variable.other.property.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  ":" meta.type.declaration.roc meta.type.record.roc punctuation.separator.annotation.roc
+  " " meta.type.declaration.roc meta.type.record.roc
+  "Str" meta.type.declaration.roc meta.type.record.roc entity.name.type.roc
+  "," meta.type.declaration.roc meta.type.record.roc punctuation.separator.comma.roc
+> }.{
+  "}" meta.type.declaration.roc meta.type.record.roc punctuation.section.braces.end.roc
+  "." punctuation.accessor.roc
+  "{" punctuation.section.braces.roc
+> 	new : Str -> Secret
+  "\t" meta.annotation.function.roc
+  "new" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Secret" meta.annotation.function.roc entity.name.type.roc
+> 	new = |k| { key: k }
+  "new" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "k" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+  "key" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "k" variable.other.roc
+  "}" punctuation.section.braces.roc
+> 
+> 	unlock : Secret, Str -> Str
+  "\t" meta.annotation.function.roc
+  "unlock" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Secret" meta.annotation.function.roc entity.name.type.roc
+  "," meta.annotation.function.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> 	unlock = |secret, password| {
+  "unlock" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "secret" meta.function.parameters.roc variable.parameter.roc
+  "," meta.function.parameters.roc punctuation.separator.comma.roc
+  " " meta.function.parameters.roc
+  "password" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 		if password == "open sesame" {
+  "if" keyword.control.roc
+  "password" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "open sesame" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "{" punctuation.section.braces.roc
+> 			"The secret key is: ${secret.key}"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "The secret key is: " string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "secret" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "key" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.property.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		} else {
+  "}" punctuation.section.braces.roc
+  "else" keyword.control.roc
+  "{" punctuation.section.braces.roc
+> 			"Wrong password!"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Wrong password!" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		}
+  "}" punctuation.section.braces.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # Define a nominal type with a custom is_eq method
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Define a nominal type with a custom is_eq method" comment.line.number-sign.roc
+> Animal := [Dog(Str), Cat(Str)].{
+  "Animal" meta.type.declaration.roc entity.name.type.roc
+  " " meta.type.declaration.roc
+  ":=" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "[" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.brackets.begin.roc
+  "Dog" meta.type.declaration.roc meta.type.tag-union.roc constant.other.tag.roc
+  "(" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.parens.begin.roc
+  "Str" meta.type.declaration.roc meta.type.tag-union.roc entity.name.type.roc
+  ")" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.parens.end.roc
+  "," meta.type.declaration.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc
+  "Cat" meta.type.declaration.roc meta.type.tag-union.roc constant.other.tag.roc
+  "(" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.parens.begin.roc
+  "Str" meta.type.declaration.roc meta.type.tag-union.roc entity.name.type.roc
+  ")" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.parens.end.roc
+  "]" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.brackets.end.roc
+  "." punctuation.accessor.roc
+  "{" punctuation.section.braces.roc
+> 	# Usually you should let the compiler derive the implementation using just the line below.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Usually you should let the compiler derive the implementation using just the line below." comment.line.number-sign.roc
+> 	# is_eq : _
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " is_eq : _" comment.line.number-sign.roc
+> 
+> 	is_eq = |a, b| match (a, b) {
+  "is_eq" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "a" meta.function.parameters.roc variable.parameter.roc
+  "," meta.function.parameters.roc punctuation.separator.comma.roc
+  " " meta.function.parameters.roc
+  "b" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "match" keyword.control.roc
+  "(" punctuation.section.parens.roc
+  "a" variable.other.roc
+  "," punctuation.separator.comma.roc
+  "b" variable.other.roc
+  ")" punctuation.section.parens.roc
+  "{" punctuation.section.braces.roc
+> 		(Dog(name1), Dog(name2)) => name1 == name2
+  "(" punctuation.section.parens.roc
+  "Dog" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "name1" variable.other.roc
+  ")" punctuation.section.parens.roc
+  "," punctuation.separator.comma.roc
+  "Dog" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "name2" variable.other.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  "=>" keyword.operator.arrow.roc
+  "name1" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "name2" variable.other.roc
+> 		(Cat(name1), Cat(name2)) => name1 == name2
+  "(" punctuation.section.parens.roc
+  "Cat" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "name1" variable.other.roc
+  ")" punctuation.section.parens.roc
+  "," punctuation.separator.comma.roc
+  "Cat" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "name2" variable.other.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  "=>" keyword.operator.arrow.roc
+  "name1" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "name2" variable.other.roc
+> 		_ => Bool.False
+  "_" variable.language.wildcard.roc
+  "=>" keyword.operator.arrow.roc
+  "Bool" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "False" constant.other.tag.roc
+> 	}
+  "}" punctuation.section.braces.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # Use `...` for something that is not yet implemented.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Use `...` for something that is not yet implemented." comment.line.number-sign.roc
+> # This gets translated under the hood to `crash "not implemented"`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " This gets translated under the hood to `crash \"not implemented\"`." comment.line.number-sign.roc
+> make_animal_noise : Animal -> Str
+  "make_animal_noise" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Animal" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> make_animal_noise = |_animal| ...
+  "make_animal_noise" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "_animal" meta.function.parameters.roc variable.other.unused.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "..." keyword.other.ellipsis.roc
+> 
+> early_return = |arg| {
+  "early_return" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "arg" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	first =
+  "first" variable.other.roc
+  "=" keyword.operator.assignment.roc
+> 		if !arg {
+  "if" keyword.control.roc
+  "!" keyword.operator.logical.roc
+  "arg" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 			return 99
+  "return" keyword.control.roc
+  "99" constant.numeric.roc
+> 		} else {
+  "}" punctuation.section.braces.roc
+  "else" keyword.control.roc
+  "{" punctuation.section.braces.roc
+> 			"continue"
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "continue" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		}
+  "}" punctuation.section.braces.roc
+> 
+> 	# Do some other stuff
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Do some other stuff" comment.line.number-sign.roc
+> 	Str.count_utf8_bytes(first)
+  "Str" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "count_utf8_bytes" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "first" variable.other.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> my_concat = Str.concat
+  "my_concat" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "Str" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "concat" variable.other.property.roc
+> 
+> # Complex pipeline: chaining static dispatch methods with a lambda
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Complex pipeline: chaining static dispatch methods with a lambda" comment.line.number-sign.roc
+> format_names : List(Str) -> Str
+  "format_names" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "List" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> format_names = |names|
+  "format_names" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "names" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+> 	names
+  "names" variable.other.roc
+> 		.map(|name| name.trim())
+  "." punctuation.accessor.roc
+  "map" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "name" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "name" variable.other.roc
+  "." punctuation.accessor.roc
+  "trim" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 		|> Str.join_with(", ")
+  "|>" keyword.operator.pipe.roc
+  "Str" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "join_with" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  ", " string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 		|> (|joined| {
+  "|>" keyword.operator.pipe.roc
+  "(" punctuation.section.parens.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "joined" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 			if joined.is_empty() "No names provided" else "Names: ${joined}"
+  "if" keyword.control.roc
+  "joined" variable.other.roc
+  "." punctuation.accessor.roc
+  "is_empty" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "No names provided" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "else" keyword.control.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Names: " string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "joined" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 		})
+  "}" punctuation.section.braces.roc
+  ")" punctuation.section.parens.roc
+> 
+> # Tags can have multiple payloads
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Tags can have multiple payloads" comment.line.number-sign.roc
+> multi_payload_tag : [Foo(I64, Str), Bar] -> Str
+  "multi_payload_tag" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "[" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.begin.roc
+  "Foo" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "(" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.parens.begin.roc
+  "I64" meta.annotation.function.roc meta.type.tag-union.roc entity.name.type.roc
+  "," meta.annotation.function.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.tag-union.roc
+  "Str" meta.annotation.function.roc meta.type.tag-union.roc entity.name.type.roc
+  ")" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.parens.end.roc
+  "," meta.annotation.function.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.tag-union.roc
+  "Bar" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "]" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> multi_payload_tag = |tag| match tag {
+  "multi_payload_tag" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "tag" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "match" keyword.control.roc
+  "tag" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 	Foo(num, name) => "Foo with ${num.to_str()} and ${name}"
+  "Foo" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "num" variable.other.roc
+  "," punctuation.separator.comma.roc
+  "name" variable.other.roc
+  ")" punctuation.section.parens.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Foo with " string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "num" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "to_str" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.method.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  " and " string.quoted.double.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "name" string.quoted.double.roc meta.interpolation.roc source.roc.embedded variable.other.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	Bar => "Just Bar"
+  "Bar" constant.other.tag.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Just Bar" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # Mark a tag union as open using `..`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Mark a tag union as open using `..`." comment.line.number-sign.roc
+> # This function accepts any tag union containing at least Red and Green.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " This function accepts any tag union containing at least Red and Green." comment.line.number-sign.roc
+> color_to_str : [Red, Green, ..] -> Str
+  "color_to_str" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "[" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.begin.roc
+  "Red" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "," meta.annotation.function.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.tag-union.roc
+  "Green" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "," meta.annotation.function.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.annotation.function.roc meta.type.tag-union.roc
+  ".." meta.annotation.function.roc meta.type.tag-union.roc keyword.operator.spread.roc
+  "]" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> color_to_str = |color| match color {
+  "color_to_str" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "color" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "match" keyword.control.roc
+  "color" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 	Red => "red"
+  "Red" constant.other.tag.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "red" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	Green => "green"
+  "Green" constant.other.tag.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "green" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	_ => "other color"
+  "_" variable.language.wildcard.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "other color" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # TODO: Closed tag unions with `..[]]` - syntax not implemented yet
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " TODO: Closed tag unions with `..[]]` - syntax not implemented yet" comment.line.number-sign.roc
+> # str_to_color : Str -> [Red, Green, Blue, Other, ..[]]
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " str_to_color : Str -> [Red, Green, Blue, Other, ..[]]" comment.line.number-sign.roc
+> 
+> # Type alias for an extensible tag union. You can use a type var (`others`) like so:
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Type alias for an extensible tag union. You can use a type var (`others`) like so:" comment.line.number-sign.roc
+> Letters(others) : [A, B, ..others]
+  "Letters" meta.type.declaration.roc entity.name.type.roc
+  "(" meta.type.declaration.roc punctuation.section.parens.begin.roc
+  "others" meta.type.declaration.roc entity.name.type.parameter.roc
+  ")" meta.type.declaration.roc punctuation.section.parens.end.roc
+  " " meta.type.declaration.roc
+  ":" meta.type.declaration.roc keyword.operator.type.definition.roc
+  " " meta.type.declaration.roc
+  "[" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.brackets.begin.roc
+  "A" meta.type.declaration.roc meta.type.tag-union.roc constant.other.tag.roc
+  "," meta.type.declaration.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc
+  "B" meta.type.declaration.roc meta.type.tag-union.roc constant.other.tag.roc
+  "," meta.type.declaration.roc meta.type.tag-union.roc punctuation.separator.comma.roc
+  " " meta.type.declaration.roc meta.type.tag-union.roc
+  ".." meta.type.declaration.roc meta.type.tag-union.roc keyword.operator.spread.roc
+  "others" meta.type.declaration.roc meta.type.tag-union.roc entity.name.type.parameter.roc
+  "]" meta.type.declaration.roc meta.type.tag-union.roc punctuation.section.brackets.end.roc
+> 
+> # Use the type alias in a function signature. Pass `[C]` as `others`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Use the type alias in a function signature. Pass `[C]` as `others`." comment.line.number-sign.roc
+> letter_to_str : Letters([C]) -> Str
+  "letter_to_str" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "Letters" meta.annotation.function.roc entity.name.type.roc
+  "(" meta.annotation.function.roc punctuation.section.parens.begin.roc
+  "[" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.begin.roc
+  "C" meta.annotation.function.roc meta.type.tag-union.roc constant.other.tag.roc
+  "]" meta.annotation.function.roc meta.type.tag-union.roc punctuation.section.brackets.end.roc
+  ")" meta.annotation.function.roc punctuation.section.parens.end.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+> letter_to_str = |letter| match letter {
+  "letter_to_str" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "letter" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "match" keyword.control.roc
+  "letter" variable.other.roc
+  "{" punctuation.section.braces.roc
+> 	A => "A"
+  "A" constant.other.tag.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "A" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	B => "B"
+  "B" constant.other.tag.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "B" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> 	_ => "other letter"
+  "_" variable.language.wildcard.roc
+  "=>" keyword.operator.arrow.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "other letter" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # If you want to define a function that works for any type that has a specific method, you can use `where`:
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " If you want to define a function that works for any type that has a specific method, you can use `where`:" comment.line.number-sign.roc
+> stringify : a -> Str where [a.to_str : a -> Str]
+  "stringify" meta.annotation.function.roc entity.name.function.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  " " meta.annotation.function.roc
+  "where" meta.annotation.function.roc keyword.other.where.roc
+  " " meta.annotation.function.roc
+  "[" meta.annotation.function.roc punctuation.section.brackets.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  "." meta.annotation.function.roc punctuation.accessor.roc
+  "to_str" meta.annotation.function.roc variable.other.property.roc
+  " " meta.annotation.function.roc
+  ":" meta.annotation.function.roc punctuation.separator.annotation.roc
+  " " meta.annotation.function.roc
+  "a" meta.annotation.function.roc entity.name.type.parameter.roc
+  " " meta.annotation.function.roc
+  "->" meta.annotation.function.roc keyword.operator.arrow.roc
+  " " meta.annotation.function.roc
+  "Str" meta.annotation.function.roc entity.name.type.roc
+  "]" meta.annotation.function.roc punctuation.section.brackets.roc
+> stringify = |value| value.to_str()
+  "stringify" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "value" meta.function.parameters.roc variable.parameter.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "value" variable.other.roc
+  "." punctuation.accessor.roc
+  "to_str" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> main! = |_args| {
+  "main!" entity.name.function.roc
+  "=" keyword.operator.assignment.roc
+  " " meta.function.parameters.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.begin.roc
+  "_args" meta.function.parameters.roc variable.other.unused.roc
+  "|" meta.function.parameters.roc punctuation.definition.parameters.end.roc
+  "{" punctuation.section.braces.roc
+> 	echo!("Hello, world!\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Hello, world!" string.quoted.double.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 	echo!("Hello, world! (using alias)\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Hello, world! (using alias)" string.quoted.double.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	echo!("${Str.inspect(number_operators(10, 5))}\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "Str" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.type.roc
+  "." string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.accessor.roc
+  "inspect" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.method.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "number_operators" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.call.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "10" string.quoted.double.roc meta.interpolation.roc source.roc.embedded constant.numeric.roc
+  "," string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.separator.comma.roc
+  " " string.quoted.double.roc meta.interpolation.roc source.roc.embedded
+  "5" string.quoted.double.roc meta.interpolation.roc source.roc.embedded constant.numeric.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 	print!(boolean_operators(Bool.True, Bool.False))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "boolean_operators" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "Bool" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "True" constant.other.tag.roc
+  "," punctuation.separator.comma.roc
+  "Bool" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "False" constant.other.tag.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# `.` (Static Dispatch) allows you to call methods that are defined on the type,
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " `.` (Static Dispatch) allows you to call methods that are defined on the type," comment.line.number-sign.roc
+> 	# like Str.concat below, or Animal.is_eq above
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " like Str.concat below, or Animal.is_eq above" comment.line.number-sign.roc
+> 	print!("One".concat(" Two"))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "One" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "." punctuation.accessor.roc
+  "concat" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  " Two" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# If you want a very similar style for a function that is not defined on the type but is in scope, you can use `|>` (Pizza Operator):
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " If you want a very similar style for a function that is not defined on the type but is in scope, you can use `|>` (Pizza Operator):" comment.line.number-sign.roc
+> 	print!("Three" |> my_concat(" Four"))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Three" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "|>" keyword.operator.pipe.roc
+  "my_concat" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  " Four" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	echo!("${simple_match(Red)}\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "simple_match" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.call.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "Red" string.quoted.double.roc meta.interpolation.roc source.roc.embedded constant.other.tag.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 	print!(match_list_patterns([1, 10]))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "match_list_patterns" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "[" punctuation.section.brackets.roc
+  "1" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "10" constant.numeric.roc
+  "]" punctuation.section.brackets.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 	echo!("${match_tag_union_advanced(Ok({}))}\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "match_tag_union_advanced" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.call.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "Ok" string.quoted.double.roc meta.interpolation.roc source.roc.embedded constant.other.tag.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "{" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.braces.roc
+  "}" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.braces.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	echo!("${multiline_str(3)}\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "multiline_str" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.call.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "3" string.quoted.double.roc meta.interpolation.roc source.roc.embedded constant.numeric.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 	echo!("Unicode escape sequence: \u(00A0)\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Unicode escape sequence: " string.quoted.double.roc
+  "\\u(00A0)" string.quoted.double.roc constant.character.escape.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	effect_demo!("This is an effectful function!")
+  "effect_demo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "This is an effectful function!" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(question_postfix(["1", "not a number", "100"]))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "question_postfix" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "[" punctuation.section.brackets.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "1" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "not a number" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "100" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "]" punctuation.section.brackets.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 	print!(question_with_err_map([]))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "question_with_err_map" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "[" punctuation.section.brackets.roc
+  "]" punctuation.section.brackets.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 	print!(question_with_err_lambda([]))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "question_with_err_lambda" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "[" punctuation.section.brackets.roc
+  "]" punctuation.section.brackets.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	sum = for_loop([1, 2, 3, 4, 5])
+  "sum" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "for_loop" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "[" punctuation.section.brackets.roc
+  "1" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "2" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "3" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "4" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "5" constant.numeric.roc
+  "]" punctuation.section.brackets.roc
+  ")" punctuation.section.parens.roc
+> 	print!(sum)
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "sum" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	expect sum == 15
+  "expect" keyword.other.roc
+  "sum" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "15" constant.numeric.roc
+> 
+> 	all_true = break_in_for_loop([True, True, False, True, True])
+  "all_true" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "break_in_for_loop" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "[" punctuation.section.brackets.roc
+  "True" constant.other.tag.roc
+  "," punctuation.separator.comma.roc
+  "True" constant.other.tag.roc
+  "," punctuation.separator.comma.roc
+  "False" constant.other.tag.roc
+  "," punctuation.separator.comma.roc
+  "True" constant.other.tag.roc
+  "," punctuation.separator.comma.roc
+  "True" constant.other.tag.roc
+  "]" punctuation.section.brackets.roc
+  ")" punctuation.section.parens.roc
+> 	print!(all_true)
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "all_true" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	while_sum = while_loop(5)
+  "while_sum" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "while_loop" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "5" constant.numeric.roc
+  ")" punctuation.section.parens.roc
+> 	print!(while_sum)
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "while_sum" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(dbg_keyword())
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "dbg_keyword" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	echo!("${if_demo(2)}\n")
+  "echo!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "${" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.begin.roc
+  "if_demo" string.quoted.double.roc meta.interpolation.roc source.roc.embedded entity.name.function.call.roc
+  "(" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "2" string.quoted.double.roc meta.interpolation.roc source.roc.embedded constant.numeric.roc
+  ")" string.quoted.double.roc meta.interpolation.roc source.roc.embedded punctuation.section.parens.roc
+  "}" string.quoted.double.roc meta.interpolation.roc punctuation.section.interpolation.end.roc
+  "\\n" string.quoted.double.roc constant.character.escape.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(tuple_demo)
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "tuple_demo" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(type_var(["a", "b"]))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "type_var" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "[" punctuation.section.brackets.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "a" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "b" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "]" punctuation.section.brackets.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(destructuring())
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "destructuring" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(record_builder())
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "record_builder" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(destructure_nominal_type(NominalTypeRecord.{ x: 42 }))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "destructure_nominal_type" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "NominalTypeRecord" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "{" punctuation.section.braces.roc
+  "x" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "42" constant.numeric.roc
+  "}" punctuation.section.braces.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# print!(record_update)
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " print!(record_update)" comment.line.number-sign.roc
+> 
+> 	print!({ x: 10, y: 20 }.x)
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "{" punctuation.section.braces.roc
+  "x" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "10" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "y" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "20" constant.numeric.roc
+  "}" punctuation.section.braces.roc
+  "." punctuation.accessor.roc
+  "x" variable.other.property.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(record_update_2({ name: "Alice", age: 30 }))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "record_update_2" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "{" punctuation.section.braces.roc
+  "name" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Alice" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "age" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "30" constant.numeric.roc
+  "}" punctuation.section.braces.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(remove_record_field({ name: "Alice", age: 30, email: "alice@example.com" }))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "remove_record_field" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "{" punctuation.section.braces.roc
+  "name" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Alice" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "age" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "30" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "email" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "alice@example.com" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "}" punctuation.section.braces.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# We only provide `host`, so `port` falls back to its default and `timeout_ms` is missing.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " We only provide `host`, so `port` falls back to its default and `timeout_ms` is missing." comment.line.number-sign.roc
+> 	minimal_config : ServerConfig
+  "\t" meta.annotation.roc
+  "minimal_config" meta.annotation.roc variable.other.definition.roc
+  " " meta.annotation.roc
+  ":" meta.annotation.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc
+  "ServerConfig" meta.annotation.roc entity.name.type.roc
+> 	minimal_config = ServerConfig.{ host: "localhost" }
+  "minimal_config" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "ServerConfig" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "{" punctuation.section.braces.roc
+  "host" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "localhost" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "}" punctuation.section.braces.roc
+> 	print!(describe_config(minimal_config))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "describe_config" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "minimal_config" variable.other.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# Reading an optional field that was not provided gives `Err(MissingField)`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Reading an optional field that was not provided gives `Err(MissingField)`." comment.line.number-sign.roc
+> 	print!(minimal_config.?timeout_ms)
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "minimal_config" variable.other.roc
+  ".?" punctuation.accessor.roc
+  "timeout_ms" variable.other.property.roc
+  ")" punctuation.section.parens.roc
+> 	expect minimal_config.?timeout_ms == Err(MissingField)
+  "expect" keyword.other.roc
+  "minimal_config" variable.other.roc
+  ".?" punctuation.accessor.roc
+  "timeout_ms" variable.other.property.roc
+  "==" keyword.operator.comparison.roc
+  "Err" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "MissingField" constant.other.tag.roc
+  ")" punctuation.section.parens.roc
+> 	expect minimal_config.port == 8080
+  "expect" keyword.other.roc
+  "minimal_config" variable.other.roc
+  "." punctuation.accessor.roc
+  "port" variable.other.property.roc
+  "==" keyword.operator.comparison.roc
+  "8080" constant.numeric.roc
+> 
+> 	# Here we do provide all fields, so `.?timeout_ms` is an `Ok`.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Here we do provide all fields, so `.?timeout_ms` is an `Ok`." comment.line.number-sign.roc
+> 	full_config : ServerConfig
+  "\t" meta.annotation.roc
+  "full_config" meta.annotation.roc variable.other.definition.roc
+  " " meta.annotation.roc
+  ":" meta.annotation.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc
+  "ServerConfig" meta.annotation.roc entity.name.type.roc
+> 	full_config = ServerConfig.{ host: "example.com", port: 80, timeout_ms: 5000 }
+  "full_config" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "ServerConfig" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "{" punctuation.section.braces.roc
+  "host" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "example.com" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "port" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "80" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "timeout_ms" variable.other.property.roc
+  ":" punctuation.separator.key-value.roc
+  "5000" constant.numeric.roc
+  "}" punctuation.section.braces.roc
+> 	print!(describe_config(full_config))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "describe_config" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "full_config" variable.other.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 	expect full_config.?timeout_ms == Ok(5000)
+  "expect" keyword.other.roc
+  "full_config" variable.other.roc
+  ".?" punctuation.accessor.roc
+  "timeout_ms" variable.other.property.roc
+  "==" keyword.operator.comparison.roc
+  "Ok" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "5000" constant.numeric.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(number_literals)
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "number_literals" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	secret = Secret.new("my_secret_key")
+  "secret" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "Secret" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "new" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "my_secret_key" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 	# This print will not expose internal data.
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " This print will not expose internal data." comment.line.number-sign.roc
+> 	print!(secret)
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "secret" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 	print!(secret.unlock("open sesame"))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "secret" variable.other.roc
+  "." punctuation.accessor.roc
+  "unlock" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "open sesame" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	dog : Animal
+  "\t" meta.annotation.roc
+  "dog" meta.annotation.roc variable.other.definition.roc
+  " " meta.annotation.roc
+  ":" meta.annotation.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc
+  "Animal" meta.annotation.roc entity.name.type.roc
+> 	dog = Dog("Fido")
+  "dog" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "Dog" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Fido" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 	cat : Animal
+  "\t" meta.annotation.roc
+  "cat" meta.annotation.roc variable.other.definition.roc
+  " " meta.annotation.roc
+  ":" meta.annotation.roc punctuation.separator.annotation.roc
+  " " meta.annotation.roc
+  "Animal" meta.annotation.roc entity.name.type.roc
+> 	cat = Cat("Whiskers")
+  "cat" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "Cat" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Whiskers" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+> 	print!(dog == cat)
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "dog" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "cat" variable.other.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(early_return(Bool.False))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "early_return" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "Bool" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "False" constant.other.tag.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	print!(stringify(12345))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "stringify" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "12345" constant.numeric.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# Tags with multiple payloads
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Tags with multiple payloads" comment.line.number-sign.roc
+> 	print!(multi_payload_tag(Foo(42, "hello")))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "multi_payload_tag" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "Foo" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "42" constant.numeric.roc
+  "," punctuation.separator.comma.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "hello" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# Open tag unions with `..`
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Open tag unions with `..`" comment.line.number-sign.roc
+> 	# This function accepts [Red, Green, ..] so we can pass Blue too
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " This function accepts [Red, Green, ..] so we can pass Blue too" comment.line.number-sign.roc
+> 	print!(color_to_str(Blue))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "color_to_str" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "Blue" constant.other.tag.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# Complex pipeline with arrow lambda
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Complex pipeline with arrow lambda" comment.line.number-sign.roc
+> 	print!(format_names(["  Alice ", "Bob  ", " Charlie"]))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "format_names" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "[" punctuation.section.brackets.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "  Alice " string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Bob  " string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "," punctuation.separator.comma.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  " Charlie" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  "]" punctuation.section.brackets.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# Type alias for extensible tag union
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Type alias for extensible tag union" comment.line.number-sign.roc
+> 	print!(letter_to_str(A))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "letter_to_str" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "A" constant.other.tag.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 	print!(letter_to_str(C)) # C is not in [A, B] but we passed it in the signature of letter_to_str
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "letter_to_str" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "C" constant.other.tag.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " C is not in [A, B] but we passed it in the signature of letter_to_str" comment.line.number-sign.roc
+> 
+> 	print!(readme.contains("Roc"))
+  "print!" entity.name.function.call.roc
+  "(" punctuation.section.parens.roc
+  "readme" variable.other.roc
+  "." punctuation.accessor.roc
+  "contains" entity.name.function.method.roc
+  "(" punctuation.section.parens.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.begin.roc
+  "Roc" string.quoted.double.roc
+  "\"" string.quoted.double.roc punctuation.definition.string.end.roc
+  ")" punctuation.section.parens.roc
+  ")" punctuation.section.parens.roc
+> 
+> 	# Commented out so CI tests can pass
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Commented out so CI tests can pass" comment.line.number-sign.roc
+> 	# crash "Avoid using crash in production software!"
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " crash \"Avoid using crash in production software!\"" comment.line.number-sign.roc
+> 
+> 	Ok({})
+  "Ok" constant.other.tag.roc
+  "(" punctuation.section.parens.roc
+  "{" punctuation.section.braces.roc
+  "}" punctuation.section.braces.roc
+  ")" punctuation.section.parens.roc
+> }
+  "}" punctuation.section.braces.roc
+> 
+> # Top level expects only run when using `roc test file.roc`
+  "#" comment.line.number-sign.roc punctuation.definition.comment.roc
+  " Top level expects only run when using `roc test file.roc`" comment.line.number-sign.roc
+> expect Bool.True != Bool.False
+  "expect" keyword.other.roc
+  "Bool" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "True" constant.other.tag.roc
+  "!=" keyword.operator.comparison.roc
+  "Bool" entity.name.type.roc
+  "." punctuation.accessor.roc
+  "False" constant.other.tag.roc
+> 
+> ## Multi-line expect that confirms basic math works.
+  "##" comment.block.documentation.roc punctuation.definition.comment.roc
+  " Multi-line expect that confirms basic math works." comment.block.documentation.roc
+> expect {
+  "expect" keyword.other.roc
+  "{" punctuation.section.braces.roc
+> 	x = 4
+  "x" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "4" constant.numeric.roc
+> 	y = 5
+  "y" variable.other.roc
+  "=" keyword.operator.assignment.roc
+  "5" constant.numeric.roc
+> 	x + y == 9
+  "x" variable.other.roc
+  "+" keyword.operator.arithmetic.roc
+  "y" variable.other.roc
+  "==" keyword.operator.comparison.roc
+  "9" constant.numeric.roc
+> }
+  "}" punctuation.section.braces.roc
+> 

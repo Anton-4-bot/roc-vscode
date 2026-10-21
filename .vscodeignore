@@ -1,0 +1,10 @@
+**
+!dist/extension.js
+!syntaxes/**
+!images/icon.png
+!images/icon.svg
+!language-configuration.json
+!package.json
+!README.md
+!CHANGELOG.md
+!LICENSE
