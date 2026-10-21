@@ -1,3 +1,5 @@
+Work In Progress.
+
 # Roc for Visual Studio Code
 
 Official [Roc](https://www.roc-lang.org) language support, powered by the language server built into the `roc` compiler.
