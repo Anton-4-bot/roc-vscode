@@ -19,8 +19,7 @@ on:
         type: string
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 concurrency:
   group: ${{ github.workflow }}
@@ -30,6 +29,9 @@ jobs:
   bump:
     runs-on: ubuntu-26.04
     timeout-minutes: 45
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # ratchet:actions/checkout@v7.0.1
 
