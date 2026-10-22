@@ -38,10 +38,15 @@ export interface InstallOptions {
 	onProgress?: (fraction: number | undefined) => void;
 }
 
-/** `token` is only for CI, where unauthenticated requests share a rate limit with every other runner. */
-export async function fetchLatestRelease(signal?: AbortSignal, token?: string): Promise<Release> {
+export function fetchLatestRelease(signal?: AbortSignal): Promise<Release> {
+	return fetchRelease("latest", signal);
+}
+
+/** `tag` is a nightly tag or `latest`. `token` is only for CI, where unauthenticated requests share a rate limit with every other runner. */
+export async function fetchRelease(tag: string, signal?: AbortSignal, token?: string): Promise<Release> {
 	const timeout = AbortSignal.timeout(30_000);
-	const response = await fetch(NIGHTLY_RELEASES_API, {
+	const url = tag === "latest" ? `${NIGHTLY_RELEASES_API}/latest` : `${NIGHTLY_RELEASES_API}/tags/${encodeURIComponent(tag)}`;
+	const response = await fetch(url, {
 		headers: {
 			Accept: "application/vnd.github+json",
 			"User-Agent": USER_AGENT,
@@ -51,11 +56,11 @@ export async function fetchLatestRelease(signal?: AbortSignal, token?: string): 
 		signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
 	});
 	if (!response.ok) {
-		throw new Error(`GitHub API request for the latest Roc nightly failed: ${response.status} ${response.statusText}`);
+		throw new Error(`GitHub API request for the ${tag} Roc nightly failed: ${response.status} ${response.statusText}`);
 	}
 	const release = (await response.json()) as Partial<Release>;
 	if (typeof release.tag_name !== "string" || !Array.isArray(release.assets)) {
-		throw new Error("Unexpected response from the GitHub API for the latest Roc nightly.");
+		throw new Error(`Unexpected response from the GitHub API for the ${tag} Roc nightly.`);
 	}
 	return release as Release;
 }

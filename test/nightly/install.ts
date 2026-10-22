@@ -1,13 +1,14 @@
-// Installs the latest nightly with the extension's own installer into .vscode-test/roc and prints
-// the roc executable path. CI uses this both to exercise the installer and to get a roc for the
-// integration tests.
-import { appendFileSync } from "node:fs";
+// Installs the nightly pinned in test/roc-nightly.txt with the extension's own installer into
+// .vscode-test/roc and prints the roc executable path. CI uses this both to exercise the installer
+// and to get a roc for the integration tests.
+import { appendFileSync, readFileSync } from "node:fs";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
-import { fetchLatestRelease, installNightly, removeOtherNightlies } from "../../src/nightly";
+import { fetchRelease, installNightly, removeOtherNightlies } from "../../src/nightly";
 
 const storageDir = fileURLToPath(new URL("../../.vscode-test/roc", import.meta.url));
-const release = await fetchLatestRelease(undefined, process.env["GITHUB_TOKEN"]);
+const tag = readFileSync(new URL("../../test/roc-nightly.txt", import.meta.url), "utf8").trim();
+const release = await fetchRelease(tag, undefined, process.env["GITHUB_TOKEN"]);
 const installed = await installNightly({ release, storageDir, platform: process.platform, arch: process.arch });
 await removeOtherNightlies(storageDir, installed.tag);
 

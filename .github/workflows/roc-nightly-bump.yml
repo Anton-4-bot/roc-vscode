@@ -1,0 +1,171 @@
+# Opens a PR that repins CI to the newest Roc nightly and resyncs the grammar
+# fixture all_syntax.roc with the roc repo at that nightly's commit.
+#
+# CI installs the nightly pinned in test/roc-nightly.txt, so the only way to
+# exercise a newer compiler is to bump the pin. A PR opened with GITHUB_TOKEN
+# does not trigger `on: pull_request` runs, so this workflow runs the tests
+# itself and reports the result in the PR description.
+name: Bump Roc nightly
+
+on:
+  schedule:
+    # Run daily at 11 AM UTC, after the nightlies are typically published.
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Nightly tag to pin, e.g. nightly-2026-10-21-5349569. Defaults to the newest nightly."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # ratchet:actions/checkout@v7.0.1
+
+      - name: Resolve nightly version
+        id: nightly
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REQUESTED_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+
+          version="$REQUESTED_VERSION"
+          if [ -z "$version" ]; then
+            version="$(gh release view --repo roc-lang/nightlies --json tagName --jq .tagName)"
+          fi
+          if ! [[ "$version" =~ ^nightly-[0-9]{4}-[0-9]{2}-[0-9]{2}-([0-9a-f]{7,40})$ ]]; then
+            echo "Not a nightly release tag: $version" >&2
+            exit 1
+          fi
+          commit="${BASH_REMATCH[1]}"
+          branch="roc-$version"
+
+          echo "Pinned:  $(tr -d '\n' < test/roc-nightly.txt)"
+          echo "Nightly: $version"
+
+          skip=""
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            skip="Branch $branch already exists; not reopening it."
+            echo "$skip" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          {
+            echo "version=$version"
+            echo "commit=$commit"
+            echo "branch=$branch"
+            echo "skip=$skip"
+          } >> "$GITHUB_OUTPUT"
+
+      # The nightly is built from this commit, so the fixture matches its syntax.
+      - name: Sync pin and syntax fixture
+        if: steps.nightly.outputs.skip == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.nightly.outputs.version }}
+          COMMIT: ${{ steps.nightly.outputs.commit }}
+        run: |
+          set -euo pipefail
+
+          echo "$VERSION" > test/roc-nightly.txt
+          gh api "repos/roc-lang/roc/contents/test/echo/all_syntax_test.roc?ref=$COMMIT" \
+            -H 'Accept: application/vnd.github.raw+json' > test/grammar/fixtures/all_syntax.roc
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # ratchet:actions/setup-node@v7.0.0
+        if: steps.nightly.outputs.skip == ''
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.nightly.outputs.skip == ''
+        run: npm ci
+
+      # A syntax change shows up as a snapshot diff in the PR.
+      - name: Update grammar snapshots
+        if: steps.nightly.outputs.skip == ''
+        run: npm run test:grammar -- --update
+
+      - name: Commit bump
+        id: bump
+        if: steps.nightly.outputs.skip == ''
+        env:
+          VERSION: ${{ steps.nightly.outputs.version }}
+          BRANCH: ${{ steps.nightly.outputs.branch }}
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet; then
+            echo "Already up to date with $VERSION." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch --create "$BRANCH"
+          git commit --all --message "Pin Roc to $VERSION"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Install the pinned Roc nightly
+        id: roc
+        if: steps.bump.outputs.changed == 'true'
+        run: npm run test:nightly
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      # A failure is reported in the PR description instead of stopping the PR.
+      - name: Run tests
+        id: tests
+        if: steps.bump.outputs.changed == 'true'
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          npm run check
+          npm test
+          xvfb-run -a npm run test:integration
+        env:
+          ROC_PATH: ${{ steps.roc.outputs.roc }}
+
+      - name: Open bump PR
+        if: steps.bump.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.nightly.outputs.version }}
+          BRANCH: ${{ steps.nightly.outputs.branch }}
+          TESTS_OUTCOME: ${{ steps.tests.outcome }}
+        run: |
+          set -euo pipefail
+
+          git push origin "$BRANCH"
+
+          run_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          if [ "$TESTS_OUTCOME" = "success" ]; then
+            tests="Tests pass with this nightly."
+          else
+            tests="Tests **fail** with this nightly, see the [workflow run]($run_url)."
+          fi
+
+          body="$(cat <<EOF
+          Repins CI to [$VERSION](https://github.com/roc-lang/nightlies/releases/tag/$VERSION) and syncs \`test/grammar/fixtures/all_syntax.roc\` (and its snapshot) with \`test/echo/all_syntax_test.roc\` in roc-lang/roc at that nightly's commit.
+
+          $tests
+          EOF
+          )"
+
+          url="$(gh pr create \
+            --base "$GITHUB_REF_NAME" \
+            --head "$BRANCH" \
+            --title "Pin Roc to $VERSION" \
+            --body "$body")"
+          echo "Opened $url" >> "$GITHUB_STEP_SUMMARY"

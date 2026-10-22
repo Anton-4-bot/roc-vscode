@@ -1,6 +1,6 @@
 // Pure helpers describing roc-lang/nightlies release assets. No vscode imports, so unit-testable.
 
-export const NIGHTLY_RELEASES_API = "https://api.github.com/repos/roc-lang/nightlies/releases/latest";
+export const NIGHTLY_RELEASES_API = "https://api.github.com/repos/roc-lang/nightlies/releases";
 export const NIGHTLY_DOWNLOAD_PREFIX = "https://github.com/roc-lang/nightlies/releases/download/";
 
 export interface ReleaseAsset {
