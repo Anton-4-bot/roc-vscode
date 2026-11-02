@@ -1,4 +1,3 @@
-Work In Progress.
 
 # Roc for Visual Studio Code
 
@@ -12,11 +11,9 @@ Official [Roc](https://www.roc-lang.org) language support, powered by the langua
 - Hover with inferred types, go to definition, find references, document highlights
 - Completion, rename, document symbols, folding and selection ranges
 - Inlay hints for inferred types
-- Code actions: annotate a binding with its inferred type, generate an `expect` test for a function
+- Code action: annotate a binding with its inferred type
 - Semantic highlighting
 - **Roc: Run File** and **Roc: Test File** from the editor title bar, and a `roc` task type
-
-The language server is still experimental, so expect rough edges. Please report problems in the [roc repo](https://github.com/roc-lang/roc/issues) (language server) or [here](https://github.com/roc-lang/roc-vscode/issues) (extension).
 
 ## Thanks
 
