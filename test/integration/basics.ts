@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import * as path from "node:path";
 import * as vscode from "vscode";
-import { closeAll, eventually, open, suite, test } from "./helpers";
+import { closeAll, eventually, open, openScratch, suite, test } from "./helpers";
 
 test("registers .roc files as the roc language", async () => {
 	const document = await open("Math.roc");
@@ -23,8 +23,8 @@ test("matches the trust of the workspace", async () => {
 	assert.equal(vscode.workspace.isTrusted, suite === "trusted");
 });
 
-// Formatting only parses, so the server offers it in restricted mode too.
-test("formats a document through the language server", async () => {
+// Through the language server, or `roc fmt` in restricted mode.
+test("formats a document", async () => {
 	const document = await open("unformatted.roc");
 	const edits = await eventually("formatting edits", () => formattingEdits(document));
 	const edit = new vscode.WorkspaceEdit();
@@ -32,6 +32,13 @@ test("formats a document through the language server", async () => {
 	assert.ok(await vscode.workspace.applyEdit(edit));
 	// Git may check the fixture out with CRLF line endings, which formatting keeps.
 	assert.equal(document.getText().replaceAll("\r\n", "\n"), "add : I64, I64 -> I64\nadd = |a, b| a + b\n");
+	await closeAll();
+});
+
+// Runs after a successful format, so a formatter is up.
+test("leaves a document that does not parse unchanged", async () => {
+	const document = await openScratch("Unparsable.roc", "add = |a,b|   (a+\n");
+	assert.equal(await formattingEdits(document), undefined);
 	await closeAll();
 });
 

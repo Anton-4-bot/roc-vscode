@@ -31,7 +31,7 @@ If there is none, it offers to download the latest nightly from [roc-lang/nightl
 
 ## Workspace trust
 
-Checking Roc code can download packages and run compile-time Roc code, so semantic features only run in [trusted workspaces](https://code.visualstudio.com/docs/editor/workspace-trust). In restricted mode the extension still highlights, formats and folds. Trusting the workspace restarts the language server with all features enabled.
+Checking Roc code can download packages and run compile-time Roc code, so the language server only runs in [trusted workspaces](https://code.visualstudio.com/docs/editor/workspace-trust). In restricted mode the extension still highlights, formats (with `roc fmt`, which only parses) and folds. Trusting the workspace starts the language server.
 
 In restricted mode, `roc.path` and `roc.server.args` are only read from your user settings, so a repository can't choose which program runs.
 

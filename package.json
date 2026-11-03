@@ -34,7 +34,7 @@
 	"capabilities": {
 		"untrustedWorkspaces": {
 			"supported": "limited",
-			"description": "In restricted mode the Roc language server only formats and folds. Type checking, diagnostics, hover and other semantic features need a trusted workspace, because checking can download packages and run compile-time Roc code.",
+			"description": "In restricted mode the Roc extension runs no language server and only highlights, formats and folds. Type checking, diagnostics, hover and other semantic features need a trusted workspace, because checking can download packages and run compile-time Roc code.",
 			"restrictedConfigurations": [
 				"roc.path",
 				"roc.server.args"

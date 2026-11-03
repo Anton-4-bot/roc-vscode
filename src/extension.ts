@@ -90,7 +90,7 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
 		vscode.commands.registerCommand("roc.runFile", (uri?: vscode.Uri) => runOnActiveFile("run", getExecutable, uri)),
 		vscode.commands.registerCommand("roc.testFile", (uri?: vscode.Uri) => runOnActiveFile("test", getExecutable, uri)),
 		vscode.tasks.registerTaskProvider(TASK_TYPE, new RocTaskProvider(getExecutable)),
-		// The server reads trust once, at initialize, so it must restart when trust is granted.
+		// Restricted mode runs no server, so start one once the workspace is trusted.
 		vscode.workspace.onDidGrantWorkspaceTrust(restart),
 		vscode.workspace.onDidChangeConfiguration((event) => {
 			if (event.affectsConfiguration("roc.path") || event.affectsConfiguration("roc.server")) void restart();
