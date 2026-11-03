@@ -3,7 +3,6 @@
 // Whether the answer is right is up to the compiler's own tests, so these hold across nightlies.
 import assert from "node:assert/strict";
 import * as vscode from "vscode";
-import { formattingEdits } from "./basics";
 import {
 	assertInside,
 	closeAll,
@@ -14,6 +13,7 @@ import {
 	positionOf,
 	request,
 	restrictedTest,
+	servers,
 	targetOf,
 	trustedTest,
 } from "./helpers";
@@ -145,12 +145,13 @@ trustedTest("provides inlay hints and code actions", async () => {
 	for (const action of actions) assert.equal(typeof action.title, "string");
 });
 
-restrictedTest("does not check code or answer semantic requests", async () => {
-	// Once formatting answers, the server is running; give it time to (wrongly) publish diagnostics.
+restrictedTest("runs no language server, so nothing checks code or answers semantic requests", async () => {
+	// Activation has started whatever runs; give a server time to (wrongly) publish diagnostics.
+	await vscode.extensions.getExtension("roc-lang.roc")!.activate();
 	const broken = await open("Broken.roc");
-	await eventually("the server", () => formattingEdits(broken).then((edits) => edits ?? []));
 	await new Promise((resolve) => setTimeout(resolve, 3000));
 	assert.deepEqual(vscode.languages.getDiagnostics(broken.uri), []);
+	assert.deepEqual(servers() ?? [], []);
 
 	const document = await open("Geometry.roc");
 	const at = (needle: string, offset = 1) => positionOf(document, needle, offset);
