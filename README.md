@@ -15,19 +15,12 @@ Official [Roc](https://www.roc-lang.org) language support, powered by the langua
 - Semantic highlighting
 - **Roc: Run File** and **Roc: Test File** from the editor title bar, and a `roc` task type
 
+<img width="1121" height="910" alt="screenshot" src="https://github.com/user-attachments/assets/e51d5b9b-570d-4007-9cfd-ccb7ffec5280" />
+
+
 ## Thanks
 
 Thanks to [Luke Boswell](https://github.com/lukewilliamboswell), whose [roc-vscode](https://github.com/lukewilliamboswell/roc-vscode) showed how to test the packaged VSIX, and inspired the language feature, editing and server lifecycle tests here.
-
-## Getting `roc`
-
-The extension uses the first `roc` it finds:
-
-1. the `roc.path` setting
-2. the nightly installed by this extension
-3. `roc` on your `PATH`
-
-If there is none, it offers to download the latest nightly from [roc-lang/nightlies](https://github.com/roc-lang/nightlies). Downloads are checked against the sha256 digest GitHub publishes for the release asset. You can also run **Roc: Install or Update Nightly** at any time. While you use the nightly installed by the extension, it checks once a week whether a newer one exists and asks before updating; turn this off with `roc.nightly.checkForUpdates`.
 
 ## Workspace trust
 
