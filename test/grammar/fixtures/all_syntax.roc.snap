@@ -4,7 +4,7 @@
 > # Copyright © 2019 Richard Feldman and subsequent Roc authors <roc-lang.org/authors>, licensed under the UPL-1.0.
   "#" comment.line.number-sign.roc punctuation.definition.comment.roc
   " Copyright © 2019 Richard Feldman and subsequent Roc authors <roc-lang.org/authors>, licensed under the UPL-1.0." comment.line.number-sign.roc
->
+> 
 > import "../../README.md" as readme : Str
   "import" meta.import.roc keyword.control.import.roc
   " " meta.import.roc
