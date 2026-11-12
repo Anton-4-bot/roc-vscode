@@ -1,3 +1,6 @@
+# Copied from test/echo/all_syntax_test.roc in roc-lang/roc.
+# Copyright © 2019 Richard Feldman and subsequent Roc authors <roc-lang.org/authors>, licensed under the UPL-1.0.
+
 import "../../README.md" as readme : Str
 
 ## Double hashtag for doc comment

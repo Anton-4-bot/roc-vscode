@@ -81,8 +81,14 @@ jobs:
           set -euo pipefail
 
           echo "$VERSION" > test/roc-nightly.txt
-          gh api "repos/roc-lang/roc/contents/test/echo/all_syntax_test.roc?ref=$COMMIT" \
-            -H 'Accept: application/vnd.github.raw+json' > test/grammar/fixtures/all_syntax.roc
+          # The UPL requires keeping the copyright notice and a reference to the UPL.
+          {
+            echo "# Copied from test/echo/all_syntax_test.roc in roc-lang/roc."
+            echo "# Copyright © 2019 Richard Feldman and subsequent Roc authors <roc-lang.org/authors>, licensed under the UPL-1.0."
+            echo
+            gh api "repos/roc-lang/roc/contents/test/echo/all_syntax_test.roc?ref=$COMMIT" \
+              -H 'Accept: application/vnd.github.raw+json'
+          } > test/grammar/fixtures/all_syntax.roc
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # ratchet:actions/setup-node@v7.0.0
         if: steps.nightly.outputs.skip == ''
