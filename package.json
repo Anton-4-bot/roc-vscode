@@ -4,7 +4,7 @@
 	"description": "Official Roc language support: syntax highlighting, diagnostics, formatting, hover, completion, rename and more.",
 	"version": "0.1.0",
 	"publisher": "roc-lang",
-	"license": "UPL-1.0",
+	"license": "MIT",
 	"icon": "images/icon.png",
 	"homepage": "https://www.roc-lang.org",
 	"repository": {
